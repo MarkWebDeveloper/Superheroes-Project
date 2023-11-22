@@ -9,9 +9,5 @@
 </template>
 
 <style scoped lang="scss">
-@import './../assets/main.scss';
 
-  main {
-    background-color: $gray;
-  }
 </style>
