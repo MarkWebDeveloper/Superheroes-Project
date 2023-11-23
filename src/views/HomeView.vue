@@ -1,13 +1,15 @@
 <script setup>
-
+    import ContainerCardsGrid from '../components/HomeView/cards/ContainerCardsGrid.vue';
 </script>
 
 <template>
   <main>
-    <h1>This is the home page</h1>
+    <ContainerCardsGrid />
+    
   </main>
 </template>
 
 <style scoped lang="scss">
+  
 
 </style>
