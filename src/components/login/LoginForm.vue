@@ -16,7 +16,7 @@
                     <div class="input-box">
                         <input type="password" placeholder="Password" class="input-control">
                         <div class="input-link">
-                            <a href="#" class="gradient-text">REGISTER HERE</a>
+                            <a href="./SignUp.vue" class="gradient-text">REGISTER HERE</a>
                         </div>
                     </div>
                 <button type="submit" class="btn">SIGN IN</button>
@@ -105,17 +105,5 @@ a{
     margin-top: 20%;
 
 } 
-
-
-
-
-
-
-
-
-
-
-
-
 
 </style>
