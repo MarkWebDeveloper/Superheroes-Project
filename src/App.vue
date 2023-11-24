@@ -1,9 +1,10 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+import Header from './general/Header.vue';
 </script>
 
 <template>
-  <header>
+  <!-- <header>
     <div class="wrapper">
       <nav>
         <RouterLink to="/">Home</RouterLink>
@@ -11,8 +12,9 @@ import { RouterLink, RouterView } from 'vue-router'
         <RouterLink to="/favourites">Favourites</RouterLink>
       </nav>
     </div>
-  </header>
+  </header> -->
 
+  <Header />
   <RouterView />
 </template>
 
