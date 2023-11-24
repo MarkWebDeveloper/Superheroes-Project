@@ -1,11 +1,13 @@
 <script setup>
 import LoginForm from '../components/login/LoginForm.vue';
+/* import SignUp from '../components/login/SignUp.vue'; */
 </script>
 
 <template>
   <main>
     
-    <LoginForm />
+    <LoginForm />;
+    <!-- <SignUp />; -->
 
 
   </main>
@@ -13,4 +15,20 @@ import LoginForm from '../components/login/LoginForm.vue';
 
 <style scoped>
 
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Space+Grotesk&display=swap');
+
+
+
+
+main{
+    display: flex;
+    justify-content: center;
+    font-size: 16px;
+    height: 100vh;
+    width: 100%;
+    background-image: url(/images/background/background-pic-login.webp);
+    opacity: 0.9;
+    font-family: 'Cormorant Garamond', serif;
+font-family: 'Space Grotesk', sans-serif;
+}
 </style>
