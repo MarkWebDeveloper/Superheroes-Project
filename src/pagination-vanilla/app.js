@@ -35,6 +35,15 @@ const getPaginationNumbers = () => {
 
 window.addEventListener("load", () => {
   getPaginationNumbers();
+  setCurrentPage(1);
+  document.querySelectorAll(".pagination-number").forEach((button) => {
+    const pageIndex = Number(button.getAttribute("page-index"));
+    if (pageIndex) {
+      button.addEventListener("click", () => {
+        setCurrentPage(pageIndex);
+      });
+    }
+  });
 });
 
 // Set the value of the currentPage variable to the pageNum value:
@@ -42,8 +51,28 @@ window.addEventListener("load", () => {
 // Function for setting the current page
 
 const setCurrentPage = (pageNum) => {
-    currentPage = pageNum;
+  currentPage = pageNum;
+  
+  handleActivePageNumber();
+  const prevRange = (pageNum - 1) * paginationLimit;
+  const currRange = pageNum * paginationLimit;
+  listItems.forEach((item, index) => {
+    item.classList.add("hidden");
+    if (index >= prevRange && index < currRange) {
+      item.classList.remove("hidden");
+    }
+  });
+};
+
+// Function for making a page active
+
+const handleActivePageNumber = () => {
+  document.querySelectorAll(".pagination-number").forEach((button) => {
+    button.classList.remove("active");
     
-    const prevRange = (pageNum - 1) * paginationLimit;
-    const currRange = pageNum * paginationLimit;
-  };
+    const pageIndex = Number(button.getAttribute("page-index"));
+    if (pageIndex == currentPage) {
+      button.classList.add("active");
+    }
+  });
+};
