@@ -25,13 +25,52 @@ const appendPageNumber = (index) => {
   paginationNumbers.appendChild(pageNumber);
 };
 
-// Function for getting the total number of buttons
+// Function for creating dots
+
+const createDots = () => {
+  const dots = document.createElement("button")
+  dots.className = "dots"
+  dots.innerHTML = "..."
+  return dots
+}
+
+// Function for hiding buttons
+
+const hideButtons = (index) => {
+  const selectedButtons = document.querySelector(`[page-index="${index}"]`)
+  selectedButtons.classList.add("hidden")
+}
+
+// Function for inserting element after another
+
+function insertAfter(referenceNode, newNode) {
+  referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+}
+
+// Function for removing element
+
+function removeElement(elementQuery) {
+  const element = document.querySelector(elementQuery)
+  element.remove()
+}
+
+// Function for creating number buttons
 
 const getPaginationNumbers = () => {
   for (let i = 1; i <= pageCount; i++) {
     appendPageNumber(i);
+
+    if (pageCount > 4) {
+      if (i == 4) {
+        hideButtons(i)
+        insertAfter(document.querySelector(`[page-index="3"]`), createDots())
+      }
+    }
+
   }
 };
+
+// Event listener
 
 window.addEventListener("load", () => {
   getPaginationNumbers();
@@ -60,6 +99,7 @@ const setCurrentPage = (pageNum) => {
   currentPage = pageNum;
   handleActivePageNumber();
   handlePageButtonsStatus();
+  handleDots();
   
   const prevRange = (pageNum - 1) * paginationLimit;
   const currRange = pageNum * paginationLimit;
@@ -82,6 +122,25 @@ const handleActivePageNumber = () => {
       button.classList.add("active");
     }
   });
+};
+
+// Function for handling dots
+
+const handleDots = () => {
+  for (let i = 1; i <= pageCount; i++) {
+    let currentButton = document.querySelector(`[page-index="${i}"]`)
+    let nextButton = document.querySelector(`[page-index="${i + 1}"]`)
+    let dots = document.querySelector('.dots')
+
+    if (pageCount > 4) {
+
+      if (currentButton.getAttribute("class") === "pagination-number active" && currentButton.getAttribute("page-index") >= 3) {
+        dots.remove()
+        nextButton.classList.remove("hidden")
+      }
+    }
+
+  }
 };
 
 // Functions for disabling and enabling next and previous buttons
