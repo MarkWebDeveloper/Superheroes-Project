@@ -2,8 +2,12 @@ import './style.css'
 
 // Access to the elements
 
-const paginationNumbers = document.getElementById("pagination-numbers");
+const elementsNumber = [...Array(100).keys()]
 const paginatedList = document.getElementById("paginated-list");
+
+fillContainer();
+
+const paginationNumbers = document.getElementById("pagination-numbers");
 const listItems = paginatedList.querySelectorAll("li");
 const nextButton = document.getElementById("next-button");
 const prevButton = document.getElementById("prev-button");
@@ -13,6 +17,16 @@ const prevButton = document.getElementById("prev-button");
 const paginationLimit = 10;
 const pageCount = Math.ceil(listItems.length / paginationLimit);
 let currentPage;
+
+// Function to fill the container
+
+function fillContainer() {
+  for (let index = 0; index < elementsNumber.length; index++) {
+    paginatedList.innerHTML += /* html */ `
+    <li>Item ${index + 1}</li>
+    `
+  }
+}
 
 // Function for creating page number buttons
 
@@ -36,7 +50,7 @@ const createDots = () => {
 
 // Function for hiding buttons
 
-const hideButtons = (index) => {
+const hideButton = (index) => {
   const selectedButtons = document.querySelector(`[page-index="${index}"]`)
   selectedButtons.classList.add("hidden")
 }
@@ -62,7 +76,7 @@ const getPaginationNumbers = () => {
 
     if (pageCount > 4) {
       if (i == 4) {
-        hideButtons(i)
+        hideButton(i)
         insertAfter(document.querySelector(`[page-index="3"]`), createDots())
       }
     }
@@ -128,18 +142,116 @@ const handleActivePageNumber = () => {
 
 const handleDots = () => {
   for (let i = 1; i <= pageCount; i++) {
-    let currentButton = document.querySelector(`[page-index="${i}"]`)
-    let nextButton = document.querySelector(`[page-index="${i + 1}"]`)
-    let dots = document.querySelector('.dots')
+    let currentButton = document.querySelector(`[page-index="${i}"]`);
+    let nextButton = document.querySelector(`[page-index="${i + 1}"]`);
+    let previousButton = document.querySelector(`[page-index="${i - 1}"]`);
+    let beforePreviousButton = document.querySelector(
+      `[page-index="${i - 2}"]`
+    );
+    let dots = document.querySelectorAll(".dots");
 
-    if (pageCount > 4) {
+    if (currentButton.classList.contains("active")) {
+      currentButton.classList.remove("hidden");
+    }
 
-      if (currentButton.getAttribute("class") === "pagination-number active" && currentButton.getAttribute("page-index") >= 3) {
-        dots.remove()
-        nextButton.classList.remove("hidden")
+    if (
+      currentButton.classList.contains("active") &&
+      currentButton.getAttribute("page-index") < 3
+    ) {
+      document.querySelector(`[page-index="1"]`).classList.remove("hidden");
+      document.querySelector(`[page-index="2"]`).classList.remove("hidden");
+      document.querySelector(`[page-index="3"]`).classList.remove("hidden");
+      nextButton.classList.remove("hidden");
+      dots.forEach((element) => {
+        element.remove();
+      });
+      insertAfter(document.querySelector(`[page-index="3"]`), createDots());
+      for (let index = pageCount - 1; index > 3; index--) {
+        hideButton(index);
       }
     }
 
+    if (
+      currentButton.classList.contains("active") &&
+      currentButton.getAttribute("page-index") == 3
+    ) {
+      dots.forEach((element) => {
+        element.remove();
+      });
+      nextButton.classList.remove("hidden");
+      insertAfter(nextButton, createDots());
+      previousButton.classList.remove("hidden");
+      insertAfter(
+        document.querySelector(`[page-index="${i - 2}"]`),
+        createDots()
+      );
+      for (let index = pageCount - 1; index > i + 1; index--) {
+        hideButton(index);
+      }
+    }
+
+    if (
+      currentButton.classList.contains("active") &&
+      currentButton.getAttribute("page-index") > 3 &&
+      currentButton.getAttribute("page-index") < pageCount - 1
+    ) {
+      dots.forEach((element) => {
+        element.remove();
+      });
+      nextButton.classList.remove("hidden");
+      insertAfter(nextButton, createDots());
+      previousButton.classList.remove("hidden");
+      beforePreviousButton.classList.add("hidden");
+      insertAfter(
+        document.querySelector(`[page-index="${i - 2}"]`),
+        createDots()
+      );
+      for (let index = pageCount - 1; index > i + 1; index--) {
+        hideButton(index);
+      }
+    }
+
+    if (
+      currentButton.classList.contains("active") &&
+      currentButton.getAttribute("page-index") == pageCount - 1
+    ) {
+      dots.forEach((element) => {
+        element.remove();
+      });
+      nextButton.classList.remove("hidden");
+      previousButton.classList.remove("hidden");
+      beforePreviousButton.classList.add("hidden");
+      insertAfter(
+        document.querySelector(`[page-index="${i - 2}"]`),
+        createDots()
+      );
+      for (let index = pageCount - 1; index > i + 1; index--) {
+        hideButton(index);
+      }
+    }
+
+    if (
+      currentButton.classList.contains("active") &&
+      currentButton.getAttribute("page-index") == pageCount
+    ) {
+      document.querySelector(`[page-index="${i}"]`).classList.remove("hidden");
+      document
+        .querySelector(`[page-index="${i - 1}"]`)
+        .classList.remove("hidden");
+      document
+        .querySelector(`[page-index="${i - 2}"]`)
+        .classList.remove("hidden");
+      dots.forEach((element) => {
+        element.remove();
+      });
+      insertAfter(
+        document.querySelector(`[page-index="${i - 3}"]`),
+        createDots()
+      );
+      for (let index = pageCount - 3; index > 1; index--) {
+        hideButton(index);
+      }
+    }
   }
 };
 
