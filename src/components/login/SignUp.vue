@@ -1,10 +1,16 @@
 <script setup>
 
+import { ref, computed } from "vue";
+
+let showform = ref (false)
+
+
+
 </script>
 
 <template>
     
-    <section class="form-main">
+    <section id="form-mains" v-if="showform">
         <div class="form-content">
             <div class="box">
                 <h2>SIGN UP</h2>
@@ -36,7 +42,7 @@
 
 <style lang="scss" scoped>
 
-.form-main {
+.form-mains {
 
     color: black;
     font-weight: 300;

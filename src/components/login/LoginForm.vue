@@ -1,14 +1,17 @@
 <script setup>
 
+
+export const user = 
+
 </script>
 
 <template>
     
-    <section class="form-main">
+    <section class="form-main" >
         <div class="form-content">
             <div class="box">
                 <h2>LOGIN SESSION</h2>
-                <form action="#">
+                <form action="./SignUp.vue">
                     <div class="input-box">
                         <input type="email"  name="email" placeholder="Email" class="input-control">
 

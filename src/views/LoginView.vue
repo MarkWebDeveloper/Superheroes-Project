@@ -1,13 +1,13 @@
 <script setup>
 import LoginForm from '../components/login/LoginForm.vue';
-/* import SignUp from '../components/login/SignUp.vue'; */
+import SignUp from '../components/login/SignUp.vue';
 </script>
 
 <template>
   <main>
     
     <LoginForm />;
-  <!-- <SignUp />;  -->
+      <SignUp />; 
 
 
   </main>
@@ -27,6 +27,8 @@ main{
     height: 100vh;
     width: 100%;
     background-image: url(/images/background/background-pic-login.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
     opacity: 0.9;
     font-family: 'Cormorant Garamond', serif;
 font-family: 'Space Grotesk', sans-serif;
