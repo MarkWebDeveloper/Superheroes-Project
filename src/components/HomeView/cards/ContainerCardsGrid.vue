@@ -26,7 +26,7 @@
 }
 
     .card {
-        background: green;
+        /*background: green;*/
         padding: 1rem;
         border: rgb(2, 0, 0) 2px solid;
     }
