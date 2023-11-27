@@ -1,6 +1,6 @@
-export default class AmiiboRepository {
+export default class HeroesRepository {
 
-    uri = import.meta.env.HEROES_API_ALL
+    uri = import.meta.env.VITE_API_ENDPOINT_HEROES
 
     async getAll() {
 

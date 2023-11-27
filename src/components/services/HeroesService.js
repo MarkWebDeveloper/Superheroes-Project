@@ -1,6 +1,6 @@
-import Character from "../../components/models/character.js";
+import Character from "../models/Character.js";
 
-export default class CharatersService {
+export default class CharactersService {
 
     characters = []
 
