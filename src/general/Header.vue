@@ -1,5 +1,15 @@
 <script setup>
 
+import { ref } from "vue";
+
+
+const isLoggedIn = ref(false)
+
+/* const user =  reactive({
+    username: 'Vero',
+    isLoggedIn: true
+}) */
+
 </script>
     
 <template>
@@ -9,10 +19,18 @@
     <nav>
 
         <img src="/images/logo/logo-superheroes.png" alt="">
-        <RouterLink class="routerLink" to="/">HOME</RouterLink>
-        <RouterLink class="routerLink" to="/login">LOG IN</RouterLink>
-        <!-- <RouterLink to="/favourites">Favorites</RouterLink> -->
 
+        <div class="headerLinkLogged" v-if="isLoggedIn">
+            <routerLink class="routerLink" to="/">HOME</routerLink>
+            <routerlink class="routerLink" to="/favorites">FAVORITES</routerlink>
+            <routerlink class="routerLink" to="/login">LOG OUT</routerlink>
+        </div>
+
+        <div class="headerLink" v-else>
+            <routerLink class="routerLink" to="/">HOME</routerLink>
+            <routerlink class="routerLink" to="/login">LOG IN</routerlink>
+        </div>
+        
     </nav>
 
     </div>
@@ -28,13 +46,29 @@
         background-color: black;
 
         display: flex;
-        justify-content: space-evenly;
-        align-items: center;
-        gap: 5%;
+        justify-content: space-around;
+        flex-direction: row;
+        align-content: center;
 
         font-family: 'Cormorant Garamond', serif;
         color: white;
         padding: 10px;
+
+        .headerLink {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 50%;
+        }
+
+        .headerLinkLogged {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width: 20rem;
+        }
 
         .routerLink {
             text-decoration: none;
@@ -42,7 +76,7 @@
         }
 
         img {
-            width: 30%;
+            width: 40%;
             margin-right: 30%;
         }
     }
@@ -52,6 +86,10 @@
         nav {
 
             font-size: 20px;
+
+            .headerLink {
+                width: 10%;
+            }
             
             img {
                 width: 10%;
