@@ -2,7 +2,7 @@ import './style.css'
 
 // Access to the elements
 
-const elementsNumber = [...Array(100).keys()]
+const elementsNumber = [...Array(200).keys()]
 const paginatedList = document.getElementById("paginated-list");
 
 fillContainer();
