@@ -1,27 +1,16 @@
 <script setup>
 
 import { ref, reactive, onBeforeMount } from 'vue'
-import CharactersRepository from '../../../components/repositories/CharactersRepo.js';
-import CharactersService from '../../../services/CharactersService.js';
-
-let characters = reactive([])
-let isLoaded = ref(false)
-
-const repository = new CharactersRepository
-const service = new CharactersService(repository)
-
-onBeforeMount(async () => {
-  characters = await service.index()
-  isLoaded.value = true
-})
+import { useApiCharactersStore } from '@/stores/ApiCharactersStore'
+const store = useApiCharactersStore()
 
 </script>
 
 <template>
   
-  <main class="Card">
+  <div class="Card">
       <div class="CardPhotoContainer">
-        <img :src="character.image" class="card-img" alt="...">
+        <img :src="store.characters[0].image" class="card-img" alt="...">
           <button class="AddCharacter">
             <img src="" alt="">
           </button>
@@ -35,12 +24,12 @@ onBeforeMount(async () => {
         </div>
       </div>
     
-  </main>
+    </div>
 
 </template>
 
 <style>
-.Card{
+/* .Card{
     display: flex;
     flex-wrap: nowrap;
     background-color: aqua;
@@ -49,5 +38,5 @@ onBeforeMount(async () => {
   
   .shPhoto{
     background: cover;
-  }
+  } */
 </style>

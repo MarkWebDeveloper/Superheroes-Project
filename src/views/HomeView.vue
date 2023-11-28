@@ -1,13 +1,19 @@
 <script setup>
-  // import ContainerCardsGrid from '../components/HomeView/cards/ContainerCardsGrid.vue';
-  import CardFlex from '../components/Home/cards/CardFlex.vue';
-  
+import { onBeforeMount } from 'vue';
+import { useApiCharactersStore } from '../stores/ApiCharactersStore.js'
+const store = useApiCharactersStore()
 </script>
 
 <template>
   <main>
-    <!-- <ContainerCardsGrid /> -->
-    <CardFlex />
+    <div v-for="character in store.characters" v-if="store.isLoaded">
+      <div class="card">
+        <div class="card-body">
+          <img :src="character.image" class="card-img" alt="...">
+          <p class="card-text">{{ character.name }}</p>
+        </div>
+      </div>
+    </div>
   </main>
 </template>
 
