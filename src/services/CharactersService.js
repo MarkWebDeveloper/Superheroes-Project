@@ -1,4 +1,4 @@
-import Character from "../models/Character.js";
+import Character from "../models/character.js";
 
 export default class CharactersService {
 

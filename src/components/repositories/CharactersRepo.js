@@ -1,4 +1,4 @@
-export default class HeroesRepository {
+export default class CharactersRepository {
 
     uri = import.meta.env.VITE_API_ENDPOINT_HEROES
 

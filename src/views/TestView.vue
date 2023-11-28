@@ -18,7 +18,18 @@ onBeforeMount( async () => {
 
 <template>
   <main>
+    <div v-for="character in characters" v-if="isLoaded">
+      <div class="card">
+        <div class="card-body">
+          <img :src="character.image" class="card-img" alt="...">
+          <p class="card-text">{{ character.name }}</p>
+        </div>
+      </div>
+    </div>
     
+    <div v-else>
+      <span class="spinner-border text-primary"></span>
+    </div>
   </main>
 </template>
 
