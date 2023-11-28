@@ -1,10 +1,27 @@
 <script setup>
 
+import { ref, reactive, onBeforeMount } from 'vue'
+import CharactersRepository from '../../../components/repositories/CharactersRepo.js';
+import CharactersService from '../../../services/CharactersService.js';
+
+let characters = reactive([])
+let isLoaded = ref(false)
+
+const repository = new CharactersRepository
+const service = new CharactersService(repository)
+
+onBeforeMount(async () => {
+  characters = await service.index()
+  isLoaded.value = true
+})
+
 </script>
+
 <template>
+  
   <main class="Card">
       <div class="CardPhotoContainer">
-         <div class="CharacterPhoto" src=""></div>
+        <img :src="character.image" class="card-img" alt="...">
           <button class="AddCharacter">
             <img src="" alt="">
           </button>
@@ -19,7 +36,9 @@
       </div>
     
   </main>
+
 </template>
+
 <style>
 .Card{
     display: flex;
