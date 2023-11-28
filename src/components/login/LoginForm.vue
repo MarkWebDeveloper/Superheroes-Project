@@ -1,14 +1,16 @@
 <script setup>
 
-/* import { ref } from 'vue'
+import { ref } from 'vue'
 import { useAuth } from '@/stores/user.js'
+import { useRouter, useRoute } from 'vue-router'
 
 const email = ref('')
 const password = ref('')
 
 const store = useAuth()
 
-const 
+const route = useRoute()
+const router = useRouter()
 
 function login() {
     if(email.value == store.objectos.username && password.value == store.objectos.password){
@@ -16,7 +18,7 @@ function login() {
         const redirectMe = router.query.redirect || '../../views/FavouritesView.vue'
     }
 } 
- */
+
 </script>
 
 <template>
