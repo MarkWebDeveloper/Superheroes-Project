@@ -1,5 +1,5 @@
 <script setup>
-    
+    import CardFlex from '../components/Home/cards/CardFlex.vue';
 </script>
 
 <template>
