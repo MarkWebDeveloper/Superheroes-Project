@@ -1,19 +1,15 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
-export const user = defineStore('users', () => {
+export const users = defineStore('user', () => {
 
-    const objectos = reactive ([
+    const objectos = reactive (
         {
-            username: "",
-            password: "",
-            isAuthenticated: true
-        },
+            username: "admin",
+            password: "myPassword",
+            isAuthenticated: false
+        }
 
-        {
-            name: "",
-            isPresent: false
-        },
-    ])
+    )
     return { objectos }
 })

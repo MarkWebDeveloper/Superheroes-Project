@@ -1,20 +1,21 @@
 <script setup>
 
-import { ref, computed } from "vue";
+/* import { ref, computed } from "vue";  */
 
-let showform = ref (false)
+/* let showform = ref (false) */
 
 
 
 </script>
 
 <template>
+   <!--  v-if="showform" -->
     
-    <section id="form-mains" v-if="showform">
+    <section id="form-mains" >
         <div class="form-content">
             <div class="box">
                 <h2>SIGN UP</h2>
-                <form action="#">
+                <form @submit="SignUp">
 
                     <div>
                         <input type="tex"  name="name" placeholder="Name" class="input-control">

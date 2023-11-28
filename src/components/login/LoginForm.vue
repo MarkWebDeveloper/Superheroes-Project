@@ -1,8 +1,22 @@
 <script setup>
 
+/* import { ref } from 'vue'
+import { useAuth } from '@/stores/user.js'
 
-export const user = 
+const email = ref('')
+const password = ref('')
 
+const store = useAuth()
+
+const 
+
+function login() {
+    if(email.value == store.objectos.username && password.value == store.objectos.password){
+        store.user.isUser = true
+        const redirectMe = router.query.redirect || '../../views/FavouritesView.vue'
+    }
+} 
+ */
 </script>
 
 <template>
@@ -11,13 +25,14 @@ export const user =
         <div class="form-content">
             <div class="box">
                 <h2>LOGIN SESSION</h2>
-                <form action="./SignUp.vue">
+                
+                <form @submit.prevent="loginForm">
                     <div class="input-box">
-                        <input type="email"  name="email" placeholder="Email" class="input-control">
+                        <input type="email"  name="email" placeholder="Email" class="input-control" v-model="username">
 
                     </div>
                     <div class="input-box">
-                        <input type="password" placeholder="Password" class="input-control">
+                        <input type="password" placeholder="Password" class="input-control" v-model="password">
                         <div class="input-link">
                             <a href="./SignUp.vue" class="gradient-text">REGISTER HERE</a>
                         </div>
