@@ -22,13 +22,13 @@ const isLoggedIn = ref(false)
 
         <div class="headerLinkLogged" v-if="isLoggedIn">
             <RouterLink class="routerLink" to="/">HOME</RouterLink>
-            <Routerlink class="routerLink" to="/favourites">FAVORITES</Routerlink>
-            <Routerlink class="routerLink" to="/login">LOG OUT</Routerlink>
+            <RouterLink class="routerLink" to="/favourites">FAVORITES</RouterLink>
+            <RouterLink class="routerLink" to="/login">LOG OUT</RouterLink>
         </div>
 
         <div class="headerLink" v-else>
             <RouterLink class="routerLink" to="/">HOME</RouterLink>
-            <Routerlink class="routerLink" to="/login">LOG IN</Routerlink>
+            <RouterLink class="routerLink" to="/login">LOG IN</RouterLink>
         </div>
         
     </nav>
@@ -67,7 +67,7 @@ const isLoggedIn = ref(false)
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            width: 20rem;
+            width: 50rem;
         }
 
         .routerLink {
@@ -89,6 +89,10 @@ const isLoggedIn = ref(false)
 
             .headerLink {
                 width: 10%;
+            }
+
+            .headerLinkLogged {
+                font-size: 30px;
             }
             
             img {
