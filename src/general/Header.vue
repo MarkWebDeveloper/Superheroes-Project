@@ -21,14 +21,14 @@ const isLoggedIn = ref(false)
         <img src="/images/logo/logo-superheroes.png" alt="">
 
         <div class="headerLinkLogged" v-if="isLoggedIn">
-            <routerLink class="routerLink" to="/">HOME</routerLink>
-            <routerlink class="routerLink" to="/favorites">FAVORITES</routerlink>
-            <routerlink class="routerLink" to="/login">LOG OUT</routerlink>
+            <RouterLink class="routerLink" to="/">HOME</RouterLink>
+            <Routerlink class="routerLink" to="/favourites">FAVORITES</Routerlink>
+            <Routerlink class="routerLink" to="/login">LOG OUT</Routerlink>
         </div>
 
         <div class="headerLink" v-else>
-            <routerLink class="routerLink" to="/">HOME</routerLink>
-            <routerlink class="routerLink" to="/login">LOG IN</routerlink>
+            <RouterLink class="routerLink" to="/">HOME</RouterLink>
+            <Routerlink class="routerLink" to="/login">LOG IN</Routerlink>
         </div>
         
     </nav>
