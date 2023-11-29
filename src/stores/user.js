@@ -1,7 +1,7 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
-export const users = defineStore('users', () => {
+export const useAuthStore = defineStore('user', () => {
 
     const objectos = reactive (
         {
@@ -11,5 +11,5 @@ export const users = defineStore('users', () => {
         }
 
     )
-    return { objectos }
+    return { useAuthStore }
 }) 

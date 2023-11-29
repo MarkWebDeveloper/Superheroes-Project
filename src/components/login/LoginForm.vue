@@ -1,20 +1,6 @@
 <script setup>
 
-import { ref } from 'vue'
-/* import { usersrouter } from 'vue-router' */
 
-const username = ref ('')
-const password = ref ('')
-
-/* const router = usersrouter() */
-
-
-function login(){
-    if (username.value == store.users.username && password.value == store.users.password) {
-        store.user.isAuthenticated = true
-        /* const redirectPath = route.query.redirect || '' */
-    }
-}
 
 </script>
 
@@ -27,11 +13,11 @@ function login(){
                 
                 <form @submit.prevent="loginForm">
                     <div class="input-box">
-                        <input type="email"  name="email" placeholder="Email" class="input-control" v-model="username">
+                        <input type="email"  name="email"  id="email" placeholder="Email" class="input-control" v-model="email">
 
                     </div>
                     <div class="input-box">
-                        <input type="password" placeholder="Password" class="input-control" v-model="password">
+                        <input type="password" name="password" id="password" placeholder="Password" class="input-control" v-model="password">
                         <div class="input-link">
                             <a href="./SignUp.vue" class="gradient-text">REGISTER HERE</a>
                         </div>
