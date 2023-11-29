@@ -47,6 +47,7 @@ onBeforeMount( async () => {
 
 <style scoped lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Space+Grotesk&display=swap');
 
 main {
   height: 90%;
@@ -94,6 +95,7 @@ main {
   flex-direction: column;
   align-items: center;
   overflow: auto;
+  font-family: 'Space Grotesk', serif;
 }
 
 .character-name-container {
