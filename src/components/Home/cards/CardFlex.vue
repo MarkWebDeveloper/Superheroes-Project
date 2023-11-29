@@ -11,25 +11,25 @@ onBeforeMount( async () => {
 </script>
 
 <template>
-  
+
   <div class="Card" v-if="store.isLoaded">
-      <div class="CardPhotoContainer">
-        <img :src="store.characters[store.newIndex].image" class="card-img" alt="...">
-          <button class="AddCharacter">
-            <img src="" alt="">
-          </button>
+    <div class="CardPhotoContainer">
+      <img :src="store.characters[store.newIndex].image" class="card-img" alt="...">
+      <button class="AddCharacter">
+        <img src="" alt="">
+      </button>
+    </div>
+    <div class="CardDataContainer">
+      <div class="Atributes">
+        <h1 class="CharacterName"></h1>
+        <p class="CharacterIntelligence">INTELLIGENCE</p>
+        <p class="CharacterPower">POWER</p>
+        <p class="CharacterSpeed">SPEED</p>
       </div>
-      <div class="CardDataContainer">
-          <div class="Atributes">
-            <h1 class="CharacterName"></h1>
-            <p class="CharacterIntelligence">INTELLIGENCE</p>
-            <p class="CharacterPower">POWER</p>
-            <p class="CharacterSpeed">SPEED</p>
-        </div>
-      </div>
-    
     </div>
 
+  </div>
+  
 </template>
 
 <style>
