@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-/* import LoginForm from '@/components/login/LoginForm.vue' */
+
 
 
 
@@ -29,12 +29,6 @@ const router = createRouter({
   ]
 })
 
-router.beforeEach( (to,from) => {
-  const store = useAuth()
 
-  if (to.meta.requiresAuth && !store.objectos. isAuthenticated) {
-    return { name: 'loginForm'}
-  }
-})
 
 export default router

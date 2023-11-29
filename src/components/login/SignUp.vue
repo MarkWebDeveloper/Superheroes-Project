@@ -2,16 +2,16 @@
 
 /* import { ref, computed } from "vue";  */
 
-/* let showform = ref (false) */
+/* let showform = ref (false)  */
 
 
 
 </script>
 
 <template>
-   <!--  v-if="showform" -->
+
     
-    <section id="form-mains" >
+    <section id="form-mains" v-if="showform" >
         <div class="form-content">
             <div class="box">
                 <h2>SIGN UP</h2>
