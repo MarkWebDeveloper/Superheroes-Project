@@ -67,7 +67,7 @@ const isLoggedIn = ref(false)
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            width: 50rem;
+            width: 50%;
         }
 
         .routerLink {
@@ -89,10 +89,6 @@ const isLoggedIn = ref(false)
 
             .headerLink {
                 width: 10%;
-            }
-
-            .headerLinkLogged {
-                font-size: 30px;
             }
             
             img {
