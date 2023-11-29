@@ -3,34 +3,39 @@
 </script>
     
 <template>
+    <header class="wrapper">
 
-    <div class="wrapper">
+        <nav>
 
-    <nav>
+            <img src="/images/logo/logo-superheroes.png" alt="">
+            <RouterLink class="routerLink" to="/">HOME</RouterLink>
+            <RouterLink class="routerLink" to="/login">LOG IN</RouterLink>
+            <!-- <RouterLink to="/favourites">Favorites</RouterLink> -->
 
-        <img src="/images/logo/logo-superheroes.png" alt="">
-        <RouterLink class="routerLink" to="/">HOME</RouterLink>
-        <RouterLink class="routerLink" to="/login">LOG IN</RouterLink>
-        <!-- <RouterLink to="/favourites">Favorites</RouterLink> -->
+        </nav>
 
-    </nav>
-
-    </div>
-
+    </header>
 </template>
 
 <style lang="scss" scoped>
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Space+Grotesk&display=swap');
 
+    header {
+        width: 100vw;
+        height: 10vh;
+    }
+
     nav {
+
+        width: 100%;
+        height: 100%;
 
         background-color: black;
 
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-        gap: 5%;
 
         font-family: 'Cormorant Garamond', serif;
         color: white;
@@ -55,7 +60,7 @@
             
             img {
                 width: 10%;
-                margin-right: 1200px;
+                margin-right: 80%;
             }
         }
     }

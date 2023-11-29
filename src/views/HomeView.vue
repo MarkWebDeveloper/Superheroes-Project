@@ -23,11 +23,13 @@ onBeforeMount( async () => {
       </div>
 
       <div class="card-data-container">
-        <div class="atributes">
-          <h1 class="character-name"></h1>
-          <p class="character-intelligence">INTELLIGENCE</p>
-          <p class="character-power">POWER</p>
-        <p class="character-speed">SPEED</p>
+        <div class="character-name-container">
+          <h1 class="character-name">Hero</h1>
+        </div>
+        <div class="character-attributes">
+          <p class="character-intelligence">INTELLIGENCE: </p>
+          <p class="character-power">POWER: </p>
+          <p class="character-speed">SPEED: </p>
         </div>
       </div>
 
@@ -43,37 +45,71 @@ onBeforeMount( async () => {
 </template>
 
 <style scoped lang="scss">
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
 main {
   height: 100%;
   width: 100%;
-  display: flex;
-  justify-content: center;
 }
 
 #cards-container {
-  background-color: red;
-  width: 80%;
-  height: 65vh;
+  margin: 0 auto;
+  position: relative;
+  background-color: gray;
+  width: 90%;
+  height: 80vh;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-auto-columns: 45%;
+  grid-auto-rows: 33%;
   grid-gap: 20px;
+  overflow-y: scroll;
 }
 
 .card {
-  background-color: yellow;
-  height: 50%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: #EE5454;
 }
 
 .card-photo-container {
   height: 50%;
   display: flex;
   justify-content: center;
-  background-color: gray;
+  align-items: center;
+  border-bottom: 2px solid black;
 }
 
 .card-img {
-  height: 100%;
+  height: 90%;
+}
+
+.card-data-container {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
+}
+
+.character-name-container {
+  height: 40%;
+  display: flex;
+  align-items: center;
+}
+.character-name {
+  
+  text-transform: uppercase;
+  font-family: 'Press Start 2P', sans-serif;
+}
+
+.character-attributes {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10%
 }
 
 @media only screen and (min-width: 768px) {
