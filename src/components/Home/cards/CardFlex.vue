@@ -1,16 +1,20 @@
 <script setup>
-
-import { ref, reactive, onBeforeMount } from 'vue'
-import { useApiCharactersStore } from '@/stores/ApiCharactersStore'
+import { onBeforeMount } from 'vue';
+import { useApiCharactersStore } from '../../../stores/ApiCharactersStore';
 const store = useApiCharactersStore()
+
+onBeforeMount( async () => {
+    store.characters = await store.service.index()
+    store.isLoaded = true
+})
 
 </script>
 
 <template>
   
-  <div class="Card">
+  <div class="Card" v-if="store.isLoaded">
       <div class="CardPhotoContainer">
-        <img :src="store.characters[0].image" class="card-img" alt="...">
+        <img :src="store.characters[store.newIndex].image" class="card-img" alt="...">
           <button class="AddCharacter">
             <img src="" alt="">
           </button>

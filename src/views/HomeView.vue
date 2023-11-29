@@ -1,8 +1,13 @@
 <script setup>
 import { onBeforeMount } from 'vue';
-import { useApiCharactersStore } from '../stores/ApiCharactersStore.js'
+import { useApiCharactersStore } from '../stores/ApiCharactersStore.js';
+import CardFlex from '../components/Home/cards/CardFlex.vue';
 const store = useApiCharactersStore()
-onBeforeMount(store.callApi())
+
+onBeforeMount( async () => {
+    store.characters = await store.service.index()
+    store.isLoaded = true
+})
 </script>
 
 <template>
@@ -15,7 +20,7 @@ onBeforeMount(store.callApi())
         </div>
       </div>
     </div>
-  </main>
+</main>
 </template>
 
 <style scoped lang="scss">
