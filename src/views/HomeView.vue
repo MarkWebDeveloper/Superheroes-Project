@@ -7,66 +7,70 @@ const store = useApiCharactersStore()
 onBeforeMount( async () => {
     store.characters = await store.service.index()
     store.isLoaded = true
+    console.log(store.characters)
 })
 </script>
 
 <template>
   <main>
-<div id="cards-container">
-  <div class="card" v-if="store.isLoaded">
+    <div id="cards-container">
+      <div class="card" v-for="character in store.characters" v-if="store.isLoaded">
 
-      <div class="card-photo-container">
-        <img :src="store.characters[store.newIndex].image" class="card-img" alt="...">
-        <button class="add-character">
-          <img src="" alt="">
-        </button>
-      </div>
+        <div class="card-photo-container">
+          <img :src="character.image" class="card-img" alt="...">
+          <button class="add-character">
+            <img src="" alt="">
+          </button>
+        </div>
 
-      <div class="card-data-container">
-        <div class="character-name-container">
-          <h1 class="character-name">Hero</h1>
+        <div class="card-data-container">
+          <div class="character-name-container">
+          <h1 class="character-name">{{ character.name }}</h1>
         </div>
         <div class="character-attributes">
-          <p class="character-intelligence">INTELLIGENCE: </p>
-          <p class="character-power">POWER: </p>
-          <p class="character-speed">SPEED: </p>
+          <p class="character-intelligence">RACE: {{ character.race }}</p>
+          <p class="character-power">INTELLIGENCE: {{ character.intelligence }}</p>
+            <p class="character-speed">POWER: {{ character.power }}</p>
+          </div>
         </div>
-      </div>
 
-  </div>      
-</div>
+      </div>
+    </div>
     <!-- <div class="card" v-for="character in store.characters" v-if="store.isLoaded">
-        <div class="card-body">
-          <img :src="character.image" class="card-img" alt="...">
-          <p class="card-text">{{ character.name }}</p>
-        </div>
-      </div> -->
-</main>
+          <div class="card-body">
+            <img :src="character.image" class="card-img" alt="...">
+            <p class="card-text">{{ character.name }}</p>
+          </div>
+        </div> -->
+  </main>
 </template>
 
 <style scoped lang="scss">
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 main {
-  height: 100%;
+  height: 90%;
   width: 100%;
+  background-image: url("/images/background/background-pic-login.webp");
 }
 
 #cards-container {
   margin: 0 auto;
   position: relative;
-  background-color: gray;
-  width: 90%;
-  height: 80vh;
+  width: 100%;
+  height: 90vh;
   display: grid;
-  grid-auto-columns: 45%;
+  grid-template-columns: repeat(2, 1fr);
   grid-auto-rows: 33%;
-  grid-gap: 20px;
+  justify-items: center;
+  row-gap: 3%;
+  padding: 2%;
   overflow-y: scroll;
 }
 
 .card {
   height: 100%;
+  width: 90%;
   border-radius: 10px;
   background-color: #EE5454;
 }
@@ -98,9 +102,11 @@ main {
   align-items: center;
 }
 .character-name {
-  
+  word-wrap: break-word;
   text-transform: uppercase;
   font-family: 'Press Start 2P', sans-serif;
+  overflow: auto;
+  text-align: center;
 }
 
 .character-attributes {
