@@ -2,6 +2,7 @@
 import { onBeforeMount } from 'vue';
 import { useApiCharactersStore } from '../stores/ApiCharactersStore.js'
 const store = useApiCharactersStore()
+onBeforeMount(store.callApi())
 </script>
 
 <template>

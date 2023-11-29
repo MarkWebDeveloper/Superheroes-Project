@@ -1,4 +1,4 @@
-import { ref, reactive, onBeforeMount } from 'vue'
+import { ref, reactive } from 'vue'
 import { defineStore } from 'pinia'
 import CharactersRepository from "./../components/repositories/CharactersRepo.js";
 import CharactersService from "./../services/CharactersService.js";
@@ -15,8 +15,6 @@ export const useApiCharactersStore = defineStore('apiCharacters', () => {
     isLoaded.value = true
     console.log(characters)
   }
-
-  onBeforeMount(callApi())
 
   return { characters, isLoaded, callApi }
 })
