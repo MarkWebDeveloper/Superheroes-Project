@@ -1,10 +1,15 @@
 <script setup>
+import ButtonSearch from '../components/homeButtons/ButtonSearch.vue';
+import ButtonFilter from '../components/homeButtons/ButtonFilter.vue';
 
 </script>
 
 <template>
   <main>
-    <h1>This is the home page</h1>
+
+    <ButtonSearch />
+    <ButtonFilter />
+
   </main>
 </template>
 
