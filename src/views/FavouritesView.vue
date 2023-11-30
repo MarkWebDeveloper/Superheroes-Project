@@ -1,5 +1,5 @@
 <script setup>
-import { AddHero } from "vue";
+import { AddHero } from '../components/favourites/AddHero.vue'
 </script>
 
 <template>
@@ -13,9 +13,6 @@ import { AddHero } from "vue";
   
 <style lang="scss" scoped>
 
-* {
-  background-image: url(../../public/images/background/background-pic-login.webp);
-}
 
 </style>
   
