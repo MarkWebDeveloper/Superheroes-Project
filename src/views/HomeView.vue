@@ -4,6 +4,10 @@ import { useApiCharactersStore } from '../stores/ApiCharactersStore.js';
 import Card from '../components/general/Card.vue';
 const store = useApiCharactersStore()
 
+// onBeforeMount( async () => {
+//     await store.callApiAndLoad()
+// })
+
 onBeforeMount( async () => {
     store.characters = await store.service.index()
     store.isLoaded = true
@@ -32,10 +36,10 @@ main {
   margin: 0 auto;
   position: relative;
   width: 100%;
-  height: 90vh;
+  height: 70vh;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: 33%;
+  grid-template-columns: repeat(2, 45%);
+  grid-auto-rows: 31%;
   justify-items: center;
   row-gap: 3%;
   padding: 2%;

@@ -64,7 +64,9 @@ const props = defineProps({
   display: flex;
   align-items: center;
 }
+
 .character-name {
+  font-size: 1.5vh;
   word-wrap: break-word;
   text-transform: uppercase;
   font-family: 'Press Start 2P', sans-serif;
@@ -73,6 +75,7 @@ const props = defineProps({
 }
 
 .character-attributes {
+  font-size: 1.5vmax;
   width: 100%;
   height: 80%;
   display: flex;

@@ -8,15 +8,15 @@ export const useApiCharactersStore = defineStore('apiCharacters', () => {
   const repository = new CharactersRepository
   const service = new CharactersService(repository) 
 
-  const index = ref(0)
   let characters = reactive([])
   let isLoaded = ref(false)
-  const newIndex = computed(() => index.value + 1)
 
-//   onBeforeMount( async () => {
-//     characters = await service.index()
-//     isLoaded = true
-// })
+  async function callApiAndLoad() {
+    characters = await service.index()
+    isLoaded = true
+}
 
-  return { characters, isLoaded, repository, service, index, newIndex }
+  // callApiAndLoad()
+
+  return { characters, isLoaded, repository, service, callApiAndLoad}
 })
