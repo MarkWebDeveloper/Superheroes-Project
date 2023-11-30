@@ -2,7 +2,6 @@
 const props = defineProps({
   character: Object
 })
-
 </script>
 
 <template>
@@ -85,9 +84,23 @@ const props = defineProps({
 }
 
 @media only screen and (min-width: 768px) {
-  #cards-container {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-  }
+  .character-name {
+  font-size: 1.5vh;
+  word-wrap: break-word;
+  text-transform: uppercase;
+  font-family: 'Press Start 2P', sans-serif;
+  overflow: auto;
+  text-align: center;
+}
+
+.character-attributes {
+  font-size: 1vmax;
+  width: 100%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10%
+}
 }
 </style>
