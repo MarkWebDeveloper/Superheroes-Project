@@ -14,9 +14,7 @@ const isLoggedIn = ref(false)
     
 <template>
 
-    <div class="wrapper">
-
-    <nav>
+    <div id="headerContainer">
 
         <img src="/images/logo/logo-superheroes.png" alt="">
 
@@ -30,8 +28,6 @@ const isLoggedIn = ref(false)
             <RouterLink class="routerLink" to="/">HOME</RouterLink>
             <RouterLink class="routerLink" to="/login">LOG IN</RouterLink>
         </div>
-        
-    </nav>
 
     </div>
 
@@ -41,25 +37,26 @@ const isLoggedIn = ref(false)
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Space+Grotesk&display=swap');
 
-    nav {
+    #headerContainer {
 
         background-color: black;
 
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         flex-direction: row;
         align-content: center;
 
         font-family: 'Cormorant Garamond', serif;
         color: white;
-        padding: 10px;
+        width: 100%;
 
         .headerLink {
             display: flex;
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            width: 50%;
+            margin-right: 15px;
+            gap: 1rem;
         }
 
         .headerLinkLogged {
@@ -67,7 +64,8 @@ const isLoggedIn = ref(false)
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
-            width: 50%;
+            margin-right: 15px;
+            gap: 1rem;
         }
 
         .routerLink {
@@ -77,27 +75,17 @@ const isLoggedIn = ref(false)
 
         img {
             width: 40%;
-            margin-right: 30%;
         }
     }
 
     @media only screen and (min-width: 768px) {
 
-        nav {
+        #headerContainer {
 
-            font-size: 20px;
-
-            .headerLink {
-                width: 10%;
-            }
-            
             img {
-                width: 10%;
-                margin-right: 1200px;
+                width: 15%;
             }
         }
     }
-
-
 
 </style>
