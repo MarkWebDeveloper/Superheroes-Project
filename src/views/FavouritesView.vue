@@ -1,15 +1,21 @@
 <script setup>
-import { Title } from "vue";
+import { AddHero } from "vue";
 </script>
+
 <template>
+  
     <div>
-      <h1>This is the favourites page</h1>
+      <h1>FAVORITES</h1>
     </div>
 
-    <Title />
+    <AddHero />
  </template>
   
-<style>
+<style lang="scss" scoped>
+
+* {
+  background-image: url(../../public/images/background/background-pic-login.webp);
+}
 
 </style>
   
