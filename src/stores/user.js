@@ -5,11 +5,11 @@ export const useAuthStore = defineStore('user', () => {
 
     const objectos = reactive (
         {
-            username: "admin",
+            username: "admin@gmail.com",
             password: "myPassword",
-            isAuthenticated: true
+            isAuthenticated: false
         }
 
     )
     return { useAuthStore }
-}) 
+})  

@@ -1,5 +1,8 @@
 <script setup>
 
+import { useAuthStore } from '@/stores/user.js'
+
+const store = useAuthStore()
 
 
 </script>
@@ -11,7 +14,7 @@
             <div class="box">
                 <h2>LOGIN SESSION</h2>
                 
-                <form @submit.prevent="loginForm">
+                <form @submit.prevent="login">
                     <div class="input-box">
                         <input type="email"  name="email"  id="email" placeholder="Email" class="input-control" v-model="email">
 
