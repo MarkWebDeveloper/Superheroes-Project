@@ -3,7 +3,7 @@ import { defineStore } from 'pinia'
 
 export const useAuthStore = defineStore('user', () => {
 
-    const objectos = reactive (
+    const user = reactive (
         {
             username: "admin@gmail.com",
             password: "myPassword",
@@ -11,5 +11,5 @@ export const useAuthStore = defineStore('user', () => {
         }
 
     )
-    return { objectos }
+    return { }
 })  
