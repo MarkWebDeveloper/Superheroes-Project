@@ -21,7 +21,7 @@ console.log(store.characters)
 main {
   height: 90%;
   width: 100%;
-  background-image: url("/images/background/public/images/background/black-and-white-background.jpg");
+  background-image: url("/images/background/background-pic-login.webp");
   background-repeat: no-repeat;
   background-size: cover;
 }
