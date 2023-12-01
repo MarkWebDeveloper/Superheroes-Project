@@ -22,6 +22,7 @@ main {
   width: 100%;
   background-image: url("./images/background/black-and-white-background.jpg");
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
 }
 
