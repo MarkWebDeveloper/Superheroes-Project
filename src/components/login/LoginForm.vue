@@ -4,6 +4,17 @@ import { useAuthStore } from '@/stores/user.js'
 
 const store = useAuthStore()
 
+const email = ref ('')
+const password = ref ('')
+
+function login(){
+    if (username.value == store.users.username && password.value == store.users.password) {
+        store.user.isAuthenticated = true
+        /* const redirectPath = route.query.redirect || '' */
+    }
+}
+
+
 
 </script>
 
