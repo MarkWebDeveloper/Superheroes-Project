@@ -1,13 +1,18 @@
 <script setup>
-
+import { AddHero } from '../components/favourites/AddHero.vue'
 </script>
+
 <template>
+  
     <div>
-      <h1>This is the favourites page</h1>
+      <h1>FAVORITES</h1>
     </div>
+
+    <AddHero />
  </template>
   
-<style>
+<style lang="scss" scoped>
+
 
 </style>
   

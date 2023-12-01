@@ -1,17 +1,53 @@
 <script setup>
+import { useApiCharactersStore } from '../stores/ApiCharactersStore.js';
+import Card from '../components/general/Card.vue';
+const store = useApiCharactersStore()
+console.log(store.characters)
 
 </script>
 
 <template>
   <main>
-    <h1>This is the home page</h1>
+    <div id="cards-container">
+      <Card v-for="character in store.characters" v-if="store.isLoaded" :character="character" />
+    </div>
   </main>
 </template>
 
 <style scoped lang="scss">
-@import './../assets/main.scss';
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Space+Grotesk&display=swap');
 
-  main {
-    background-color: $gray;
+main {
+  height: 90%;
+  width: 100%;
+  background-image: url("/images/background/background-pic-login.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#cards-container {
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  display: grid;
+  grid-template-columns: repeat(2, 45%);
+  grid-auto-rows: 31%;
+  justify-content: center;
+  justify-items: center;
+  row-gap: 3%;
+  padding: 2%;
+  overflow-y: scroll;
+}
+
+@media only screen and (min-width: 768px) {
+  #cards-container {
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: 50%;
+    row-gap: 6%;
   }
+}
 </style>
