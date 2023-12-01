@@ -1,4 +1,4 @@
-import { ref, reactive, computed, onBeforeMount } from 'vue'
+import { ref, reactive, computed } from 'vue'
 import { defineStore } from 'pinia'
 import CharactersRepository from "./../components/repositories/CharactersRepo.js";
 import CharactersService from "./../services/CharactersService.js";
