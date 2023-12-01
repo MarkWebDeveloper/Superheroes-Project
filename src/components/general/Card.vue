@@ -2,10 +2,22 @@
 const props = defineProps({
   character: Object
 })
+
+let isHero = true
+
+const checkIfHero = () => {
+  if (props.character.alignment == 'good') {
+    isHero = true
+  } else {
+    isHero = false
+  }
+}
+
+checkIfHero()
 </script>
 
 <template>
-  <div class="card">
+  <div class="card" :class="{ hero: isHero }">
 
     <div class="card-photo-container">
       <img :src="character.image" class="card-img" alt="...">
@@ -34,6 +46,10 @@ const props = defineProps({
   width: 90%;
   border-radius: 10px;
   background-color: #EE5454;
+}
+
+.hero {
+  background-color: #5492EE;
 }
 
 .card-photo-container {

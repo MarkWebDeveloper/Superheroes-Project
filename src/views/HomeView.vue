@@ -2,7 +2,6 @@
 import { useApiCharactersStore } from '../stores/ApiCharactersStore.js';
 import Card from '../components/general/Card.vue';
 const store = useApiCharactersStore()
-console.log(store.characters)
 
 </script>
 
