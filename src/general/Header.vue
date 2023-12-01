@@ -13,7 +13,9 @@ const isLoggedIn = ref(false)
 </script>
     
 <template>
+    <header class="wrapper">
 
+<<<<<<< HEAD
     <div id="headerContainer">
 
         <img src="/images/logo/logo-superheroes.png" alt="">
@@ -30,21 +32,49 @@ const isLoggedIn = ref(false)
         </div>
 
     </div>
+=======
+        <nav>
 
+            <img src="/images/logo/logo-superheroes.png" alt="">
+            <RouterLink class="routerLink" to="/">HOME</RouterLink>
+            <RouterLink class="routerLink" to="/login">LOG IN</RouterLink>
+            <!-- <RouterLink to="/favourites">Favorites</RouterLink> -->
+
+        </nav>
+>>>>>>> feature/home-page
+
+    </header>
 </template>
 
 <style lang="scss" scoped>
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Space+Grotesk&display=swap');
 
+<<<<<<< HEAD
     #headerContainer {
+=======
+    header {
+        width: 100vw;
+        height: 10vh;
+    }
+
+    nav {
+>>>>>>> feature/home-page
+
+        width: 100%;
+        height: 100%;
 
         background-color: black;
 
         display: flex;
+<<<<<<< HEAD
         justify-content: space-between;
         flex-direction: row;
         align-content: center;
+=======
+        justify-content: space-evenly;
+        align-items: center;
+>>>>>>> feature/home-page
 
         font-family: 'Cormorant Garamond', serif;
         color: white;
@@ -83,7 +113,12 @@ const isLoggedIn = ref(false)
         #headerContainer {
 
             img {
+<<<<<<< HEAD
                 width: 15%;
+=======
+                width: 10%;
+                margin-right: 80%;
+>>>>>>> feature/home-page
             }
         }
     }

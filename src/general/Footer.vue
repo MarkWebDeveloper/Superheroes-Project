@@ -4,7 +4,7 @@
 
 <template>
 
-    <div class="footer">
+    <footer class="footer">
 
         <p>Copyright©2023</p>
 
@@ -15,7 +15,7 @@
             <img src="/images/icons/facebook.png" alt="">
 
         </div>
-    </div>
+    </footer>
 
 </template>
 
