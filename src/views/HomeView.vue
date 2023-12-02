@@ -1,7 +1,12 @@
 <script setup>
 import { useApiCharactersStore } from '../stores/ApiCharactersStore.js';
 import Card from '../components/general/Card.vue';
+
 const store = useApiCharactersStore()
+
+// const gettingOnlyTen = async () => { await store.showOnlyTen() }
+// gettingOnlyTen()
+// const tenChars = store.characters.slice(0, 10)
 
 </script>
 

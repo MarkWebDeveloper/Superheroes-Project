@@ -11,10 +11,12 @@ export const useApiCharactersStore = defineStore('apiCharacters', () => {
   let characters = reactive([])
   let isLoaded = ref(false)
 
+  const showOnlyTen = computed(() => characters.slice(0, 10))
+
   async function setCharacters() {
     this.characters = await service.index()
     isLoaded.value = true
   }
 
-  return { characters, isLoaded, setCharacters }
+  return { characters, isLoaded, setCharacters, showOnlyTen }
 })

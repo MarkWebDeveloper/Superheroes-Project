@@ -22,7 +22,7 @@ checkIfHero()
     <div class="card-photo-container">
       <img :src="character.image" class="card-img" alt="...">
       <button class="add-character">
-        <img src="" alt="">
+        <img src="/images/icons/add.webp" alt="add button image">
       </button>
     </div>
 
@@ -53,15 +53,23 @@ checkIfHero()
 }
 
 .card-photo-container {
-  height: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 50%;
   border-bottom: 2px solid black;
+  text-align: center;
 }
 
 .card-img {
   height: 90%;
+  margin: auto;
+}
+
+.add-character {
+  width: 20px;
+  align-self: flex-start;
+  margin-left: auto;
 }
 
 .card-data-container {
