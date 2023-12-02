@@ -37,7 +37,7 @@ main {
   width: 100%;
   height: 70vh;
   display: grid;
-  grid-template-columns: repeat(2, 45%);
+  grid-template-columns: repeat(2, 200px);
   grid-auto-rows: 31%;
   justify-content: center;
   justify-items: center;
@@ -50,7 +50,7 @@ main {
   #cards-container {
     width: 70%;
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 140px);
     grid-auto-rows: 50%;
     row-gap: 6%;
   }

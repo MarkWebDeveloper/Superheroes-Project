@@ -1,7 +1,10 @@
 <script setup>
+import { useFavouriteCharactersStore } from '../../stores/FavouriteCharactersStore';
 const props = defineProps({
   character: Object
 })
+
+const store = useFavouriteCharactersStore()
 
 let isHero = true
 
@@ -21,7 +24,7 @@ checkIfHero()
 
     <div class="card-photo-container">
       <img :src="character.image" class="card-img" alt="...">
-      <button class="add-character">
+      <button class="add-character" @click="store.addCharacter(character), console.log(store.favouriteCharacters)">
         <img src="/images/icons/add.webp" alt="add button image">
       </button>
     </div>
@@ -40,7 +43,7 @@ checkIfHero()
   </div>
 </template>
 
-<style>
+<style scoped lang="scss">
 .card {
   height: 100%;
   width: 90%;
@@ -63,11 +66,11 @@ checkIfHero()
 
 .card-img {
   position: absolute;
-  width: 14%;
+  height: 14%;
 }
 
 .add-character {
-  width: 20%;
+  width: 30px;
   align-self: flex-start;
   margin-left: auto;
   margin-right: 1vmax;
@@ -112,34 +115,16 @@ checkIfHero()
 @media only screen and (min-width: 768px) {
 
   .card-img {
-  width: 10%;
+  height: 18%;
 }
 
-.add-character {
-  width: 18%;
-  align-self: flex-start;
-  margin-left: auto;
+  .add-character {
   margin-right: 0.3vmax;
   margin-top: 0.3vmax;
 }
 
-  .character-name {
-  font-size: 1.5vh;
-  word-wrap: break-word;
-  text-transform: uppercase;
-  font-family: 'Press Start 2P', sans-serif;
-  overflow: auto;
-  text-align: center;
-}
-
 .character-attributes {
   font-size: 1vmax;
-  width: 100%;
-  height: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding-left: 10%
 }
 }
 </style>
