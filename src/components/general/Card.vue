@@ -62,14 +62,16 @@ checkIfHero()
 }
 
 .card-img {
-  height: 90%;
-  margin: auto;
+  position: absolute;
+  width: 14%;
 }
 
 .add-character {
-  width: 20px;
+  width: 20%;
   align-self: flex-start;
   margin-left: auto;
+  margin-right: 1vmax;
+  margin-top: 1vmax;
 }
 
 .card-data-container {
@@ -108,6 +110,19 @@ checkIfHero()
 }
 
 @media only screen and (min-width: 768px) {
+
+  .card-img {
+  width: 10%;
+}
+
+.add-character {
+  width: 18%;
+  align-self: flex-start;
+  margin-left: auto;
+  margin-right: 0.3vmax;
+  margin-top: 0.3vmax;
+}
+
   .character-name {
   font-size: 1.5vh;
   word-wrap: break-word;
