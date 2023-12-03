@@ -50,7 +50,7 @@ main {
   #cards-container {
     width: 70%;
     display: grid;
-    grid-template-columns: repeat(5, 140px);
+    grid-template-columns: repeat(5, 17%);
     grid-auto-rows: 50%;
     row-gap: 6%;
   }
