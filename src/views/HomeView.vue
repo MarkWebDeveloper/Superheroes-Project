@@ -37,7 +37,7 @@ main {
   width: 100%;
   height: 70vh;
   display: grid;
-  grid-template-columns: repeat(2, 200px);
+  grid-template-columns: repeat(2, 45%);
   grid-auto-rows: 31%;
   justify-content: center;
   justify-items: center;
