@@ -1,10 +1,10 @@
 <script setup>
 import ButtonSearch from '../components/homeButtons/ButtonSearch.vue';
-import ButtonFilter from '../components/homeButtons/ButtonFilter.vue';
 import { useApiCharactersStore } from '../stores/ApiCharactersStore.js';
 import Card from '../components/general/Card.vue';
 
-const store = useApiCharactersStore()
+const store = useApiCharactersStore();
+const buscar= buscarPorNombre();
 
 // const gettingOnlyTen = async () => { await store.showOnlyTen() }
 // gettingOnlyTen()
@@ -16,7 +16,6 @@ const store = useApiCharactersStore()
   <main>
 
     <ButtonSearch />
-    <ButtonFilter />
 
   </main>
 </template>

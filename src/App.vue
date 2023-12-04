@@ -13,20 +13,7 @@ settingCharacters()
 </script>
 
 <template>
-<<<<<<< HEAD
-  <header>
-    <div class="wrapper">
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/login">Login</RouterLink>
-        <RouterLink to="/favourites">Favourites</RouterLink>
-      </nav>
-    </div>
-  </header>
-  
-=======
   <Header />
->>>>>>> bc01429aa15e9c34d98910f3f301b22a21b4fcfe
   <RouterView />
   <Footer />
 </template>
