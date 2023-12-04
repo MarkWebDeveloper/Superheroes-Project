@@ -1,6 +1,9 @@
 <script setup>
 import LoginForm from '../components/login/LoginForm.vue';
 import SignUp from '../components/login/SignUp.vue';
+import { useShowHideForm } from '../stores/showForm';
+
+const store = useShowHideForm()
 </script>
 
 <template>

@@ -1,17 +1,16 @@
 <script setup>
 
-/* import { ref, computed } from "vue";  */
+import { ref, computed } from "vue";
+import { useShowHideForm } from '../../stores/showForm.js';
 
-/* let showform = ref (false)  */
-
-
+const store2 = useShowHideForm()
 
 </script>
 
 <template>
 
     
-    <section id="form-mains" v-if="showform" >
+    <section id="form-mains" v-if="store2.showSignUp" >
         <div class="form-content">
             <div class="box">
                 <h2>SIGN UP</h2>

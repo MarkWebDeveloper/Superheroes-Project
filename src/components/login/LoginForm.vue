@@ -4,6 +4,10 @@ import { ref } from "vue";
 import { useAuthStore } from '@/stores/user.js';
 import { useRoute, useRouter } from "vue-router";
 
+import { useShowHideForm } from '../../stores/showForm.js';
+
+const store2 = useShowHideForm()
+
 const store = useAuthStore()
 const route = useRoute()
 const router = useRouter()
@@ -30,7 +34,7 @@ function login(){
             <div class="box">
                 <h2>LOGIN SESSION</h2>
                 
-                <form @submit.prevent="login">
+                <form @submit.prevent="login" v-if="store2.showLogin">
                     <div class="input-box">
                         <input type="email"  name="email"  id="email" placeholder="Email" class="input-control" v-model="email">
 
@@ -38,7 +42,7 @@ function login(){
                     <div class="input-box">
                         <input type="password" name="password" id="password" placeholder="Password" class="input-control" v-model="password">
                         <div class="input-link">
-                            <a href="./SignUp.vue" class="gradient-text">REGISTER HERE</a>
+                            <a href="./SignUp.vue" class="gradient-text" @click="store2.showForm()">REGISTER HERE</a>
                         </div>
                     </div>
                 <button type="submit" class="btn">SIGN IN</button>
