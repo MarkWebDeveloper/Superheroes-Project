@@ -18,17 +18,17 @@
                 <form @submit="SignUp">
 
                     <div>
-                        <input type="tex"  name="name" placeholder="Name" class="input-control">
+                        <input type="tex"  name="name" placeholder="Name" class="input-control" v-model="name">
 
                     </div>
 
                     <div>
-                        <input type="email"  name="email" placeholder="Email" class="input-control">
+                        <input type="email"  name="email" placeholder="Email" class="input-control" v-model="email">
 
                     </div>
                     
                     <div>
-                        <input type="password" placeholder="Password" class="input-control">
+                        <input type="password" placeholder="Password" class="input-control" v-model="password">
 
                     </div>
                 <button type="submit" class="btn">REGISTER</button>

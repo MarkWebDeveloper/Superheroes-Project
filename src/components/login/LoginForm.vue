@@ -1,10 +1,12 @@
 <script setup>
 
 import { ref } from "vue";
-/* import { router } from "vue-router"; */
 import { useAuthStore } from '@/stores/user.js';
+import { useRoute, useRouter } from "vue-router";
 
 const store = useAuthStore()
+const route = useRoute()
+const router = useRouter()
 
 const email = ref ('')
 const password = ref ('')
@@ -12,8 +14,8 @@ const password = ref ('')
 function login(){
     if (email.value == store.users.username && password.value == store.users.password) {
         store.users.isAuthenticated = true
-       /*  const redirectPath = route.query.redirect || '/favourites'
-        router.push(redirectPath) */
+    const redirectPath = route.query.redirect || '/favourites'
+        router.push(redirectPath) 
     }
 }
 

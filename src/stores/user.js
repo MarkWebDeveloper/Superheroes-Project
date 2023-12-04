@@ -1,4 +1,4 @@
-import { ref, reactive, computed } from 'vue'
+import { ref, reactive} from 'vue'
 import { defineStore } from 'pinia'
 
 export const useAuthStore = defineStore('user', () => {
@@ -8,7 +8,8 @@ export const useAuthStore = defineStore('user', () => {
             username: 'admin@gmail.com',
             password: 'myPassword',
             isAuthenticated: false
-        }
+        },
+        
 
     )
     return { users }
