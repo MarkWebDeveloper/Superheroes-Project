@@ -42,7 +42,7 @@ function login(){
                     <div class="input-box">
                         <input type="password" name="password" id="password" placeholder="Password" class="input-control" v-model="password">
                         <div class="input-link">
-                            <a href="./SignUp.vue" class="gradient-text" @click="store2.showForm()">REGISTER HERE</a>
+                            <button type="button" class="gradient-text" @click="store2.showForm()">REGISTER HERE</button>
                         </div>
                     </div>
                 <button type="submit" class="btn">SIGN IN</button>
@@ -104,7 +104,7 @@ function login(){
     margin-bottom: 16%;
 }
 
-a{
+button{
     text-decoration: none;
     font-weight: 500;
     color: white;

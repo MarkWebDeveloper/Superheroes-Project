@@ -11,9 +11,8 @@ const store = useShowHideForm()
 <template>
   <main>
     
-    <LoginForm v-if="store.showLogin" />
-      <SignUp  v-if="store.showSignUp"/>
-
+    <LoginForm v-if="store.showLogin"></LoginForm>
+    <SignUp v-if="store.showSignUp"></SignUp>
 
   </main>
 </template>
