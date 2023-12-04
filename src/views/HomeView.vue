@@ -1,6 +1,7 @@
 <script setup>
 import { useApiCharactersStore } from '../stores/ApiCharactersStore.js';
 import Card from '../components/general/Card.vue';
+import Filter from '../components/Filter.vue'
 
 const store = useApiCharactersStore()
 
@@ -12,6 +13,7 @@ const store = useApiCharactersStore()
 
 <template>
   <main>
+    <Filter />
     <div id="cards-container">
       <Card v-for="character in store.characters" v-if="store.isLoaded" :character="character" />
     </div>
