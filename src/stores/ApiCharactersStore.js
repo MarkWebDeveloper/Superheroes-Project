@@ -9,6 +9,7 @@ export const useApiCharactersStore = defineStore('apiCharacters', () => {
   const service = new CharactersService(repository)
 
   let characters = reactive([])
+  let searchedCharacter = ref ('')
   let isLoaded = ref(false)
 
   const showOnlyTen = computed(() => characters.slice(0, 10))
@@ -18,5 +19,5 @@ export const useApiCharactersStore = defineStore('apiCharacters', () => {
     isLoaded.value = true
   }
 
-  return { characters, isLoaded, setCharacters, showOnlyTen }
+  return { characters, isLoaded, setCharacters, showOnlyTen, searchedCharacter }
 })

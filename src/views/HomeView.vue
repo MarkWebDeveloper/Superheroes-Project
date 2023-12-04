@@ -4,17 +4,26 @@ import { useApiCharactersStore } from '../stores/ApiCharactersStore.js';
 import Card from '../components/general/Card.vue';
 
 const store = useApiCharactersStore();
-const buscar= buscarPorNombre();
+let searchedCharacters = []
 
-// const gettingOnlyTen = async () => { await store.showOnlyTen() }
-// gettingOnlyTen()
-// const tenChars = store.characters.slice(0, 10)
+function buscarPorNombre(name, characters) {
+        for (let i = 0; i < characters.length; i++) {
+            if (characters[i].getName() === name) {
+              //añadir al array q hemos creado
+                searchedCharacters.push(characters[i]);
+            }
+        }
+    }
 
 </script>
 
 <template>
   <main>
-    <ButtonSearch />
+    <div id="cards-container">
+      <ButtonSearch />
+      <Card v-for="character in store.characters" v-if="store.isLoaded" :character="character" />
+    </div>
+  
   </main>
 </template>
 

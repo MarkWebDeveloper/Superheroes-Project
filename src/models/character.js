@@ -35,11 +35,3 @@ export default class Character {
 
 }
 
-function buscarPorNombre(nombre, characters) {
-    for (let i = 0; i < characters.length; i++) {
-        if (characters[i].getName() === nombre) {
-            return characters[i];
-        }
-    }
-    return null;
-}

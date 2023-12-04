@@ -1,22 +1,23 @@
 
-import { useFavouriteCharactersStore } from '../../stores/FavouriteCharactersStore';
-
 <script>
-    function buscarPorNombre(name, character) {
-        for (let i = 0; i < character.length; i++) {
-            if (character[i].getName() === name) {
-                return character[i];
+    import { useApiCharactersStore } from '../../stores/ApiCharactersStore';
+    const store = useApiCharactersStore();
+
+    function buscarPorNombre(name, characters) {
+        for (let i = 0; i < characters.length; i++) {
+            if (characters[i].getName() === name) {
+                return characters[i];
             }
         }
         return null;
     }
 
-    function search(event) {
+    /*function search(event) {
         event.preventDefault();
         const button = document.getElementById("button-search");
         button.addEventListener("click", () => {
             const input = document.querySelector("input[type='text']");
-            const characters = ["Luke Skywalker", "Darth Vader", "Yoda", "Obi-Wan Kenobi"];
+            const characters = [""];
             const character = buscarPorNombre(input.value, character);
             if (character) {
                 alert(`El personaje encontrado es: ${character}`);
@@ -24,13 +25,13 @@ import { useFavouriteCharactersStore } from '../../stores/FavouriteCharactersSto
                 alert("Personaje no encontrado.");
             }
         });
-    }
+    }*/
 
 </script>
 
 <template>
     <form>
-        <input type="text" placeholder="Search...">
+        <input type="text" placeholder="Search..." v-model="store.searchedCharacter">
         <button id="button-search" type="submit">Buscar</button>
     </form>
 </template>
