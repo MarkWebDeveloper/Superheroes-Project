@@ -1,7 +1,11 @@
 <script setup>
 
-import { ref, computed } from "vue";
+import { ref } from "vue";
 import { useShowHideForm } from '../../stores/showForm.js';
+
+const name= ref('')
+const email = ref ('')
+const password = ref ('')
 
 const store2 = useShowHideForm()
 
