@@ -1,22 +1,35 @@
 
-<script setup>
+<script>
+    function buscarPorNombre(name, character) {
+        for (let i = 0; i < character.length; i++) {
+            if (character[i].getName() === name) {
+                return character[i];
+            }
+        }
+        return null;
+    }
 
     function search(event) {
         event.preventDefault();
-        const query = document.getElementById("query").value;
-        fetch(`https://akabab.github.io/superhero-api/api?q=${query}`)
-        .then(response => response.json())
-        .then(data => {
-        // Mostrar los resultados en la página
+        const button = document.getElementById("button-search");
+        button.addEventListener("click", () => {
+            const input = document.querySelector("input[type='text']");
+            const characters = ["Luke Skywalker", "Darth Vader", "Yoda", "Obi-Wan Kenobi"];
+            const character = buscarPorNombre(input.value, character);
+            if (character) {
+                alert(`El personaje encontrado es: ${character}`);
+            } else {
+                alert("Personaje no encontrado.");
+            }
         });
     }
-
+    
 </script>
 
 <template>
-    <form onsubmit="search(event)">
+    <form>
         <input type="text" placeholder="Search...">
-        <button type="submit">Buscar</button>
+        <button id="button-search" type="submit">Buscar</button>
     </form>
 </template>
 

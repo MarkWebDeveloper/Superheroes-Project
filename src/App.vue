@@ -1,8 +1,19 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
+import Header from './general/Header.vue';
+import Footer from './general/Footer.vue';
+import { useApiCharactersStore } from './stores/ApiCharactersStore';
+import { useFavouriteCharactersStore } from './stores/FavouriteCharactersStore';
+
+const favStore = useFavouriteCharactersStore()
+const store = useApiCharactersStore()
+const settingCharacters = async () => { await store.setCharacters() }
+settingCharacters()
+
 </script>
 
 <template>
+<<<<<<< HEAD
   <header>
     <div class="wrapper">
       <nav>
@@ -13,42 +24,13 @@ import { RouterLink, RouterView } from 'vue-router'
     </div>
   </header>
   
+=======
+  <Header />
+>>>>>>> bc01429aa15e9c34d98910f3f301b22a21b4fcfe
   <RouterView />
+  <Footer />
 </template>
 
 <style scoped>
-/* header {
-  line-height: 1.5;
-  max-height: 100vh;
-}
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-} */
 </style>
