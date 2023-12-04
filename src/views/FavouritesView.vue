@@ -21,5 +21,14 @@ h1 {
   text-align: center;
   font-size: 30px;
 }
+
+main {
+  height: 90%;
+  width: 100%;
+  background-image: url("./images/background/black-and-white-background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 </style>
   
