@@ -1,4 +1,6 @@
 
+import { useFavouriteCharactersStore } from '../../stores/FavouriteCharactersStore';
+
 <script>
     function buscarPorNombre(name, character) {
         for (let i = 0; i < character.length; i++) {
@@ -23,7 +25,7 @@
             }
         });
     }
-    
+
 </script>
 
 <template>

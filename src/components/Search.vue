@@ -1,5 +1,6 @@
+import ApiCharactersStore from '../../src/stores/ApiCharactersStore.js';
 <template>
-    <div>
+  <div>
       <form @submit.prevent="fetchData">
         <input type="text" v-model="buscar" class="form-control" placeholder="Ejemplo: Bulbasaur"/>
         <button type="submit">Buscar</button>

@@ -14,9 +14,7 @@ const buscar= buscarPorNombre();
 
 <template>
   <main>
-
     <ButtonSearch />
-
   </main>
 </template>
 
