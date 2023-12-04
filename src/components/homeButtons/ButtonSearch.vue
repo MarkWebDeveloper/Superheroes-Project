@@ -3,13 +3,16 @@
     import { useApiCharactersStore } from '../../stores/ApiCharactersStore';
     const store = useApiCharactersStore();
 
-    function buscarPorNombre(name, characters) {
+ //nuevo array para guardar los personajes buscados a traves de la funcion buscar
+let searchedCharacters = []
+
+function buscarPorNombre(name, characters) {
         for (let i = 0; i < characters.length; i++) {
             if (characters[i].getName() === name) {
-                return characters[i];
+              //añadir al array q hemos creado
+                searchedCharacters.push(characters[i]);
             }
         }
-        return null;
     }
 
     /*function search(event) {
@@ -32,7 +35,7 @@
 <template>
     <form>
         <input type="text" placeholder="Search..." v-model="store.searchedCharacter">
-        <button id="button-search" type="submit">Buscar</button>
+        <button id="button-search" type="submit" @click="buscarPorNombre(store.searchedCharacter, store.characters), console.log (searchedCharacters)">Buscar</button>
     </form>
 </template>
 
