@@ -10,7 +10,7 @@ const store2 = useShowHideForm()
 <template>
 
     
-    <section id="form-mains" v-if="store2.showSignUp" >
+    <section id="form-mains" >
         <div class="form-content">
             <div class="box">
                 <h2>SIGN UP</h2>

@@ -34,7 +34,7 @@ function login(){
             <div class="box">
                 <h2>LOGIN SESSION</h2>
                 
-                <form @submit.prevent="login" v-if="store2.showLogin">
+                <form @submit.prevent="login">
                     <div class="input-box">
                         <input type="email"  name="email"  id="email" placeholder="Email" class="input-control" v-model="email">
 

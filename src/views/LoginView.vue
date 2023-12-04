@@ -3,14 +3,16 @@ import LoginForm from '../components/login/LoginForm.vue';
 import SignUp from '../components/login/SignUp.vue';
 import { useShowHideForm } from '../stores/showForm';
 
+
+
 const store = useShowHideForm()
 </script>
 
 <template>
   <main>
     
-    <LoginForm />;
-      <SignUp />; 
+    <LoginForm v-if="store.showLogin" />
+      <SignUp  v-if="store.showSignUp"/>
 
 
   </main>
