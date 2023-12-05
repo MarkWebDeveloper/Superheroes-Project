@@ -14,6 +14,9 @@ const store = useApiCharactersStore()
   <main>
     <div id="cards-container">
       <Card v-for="character in store.characters" v-if="store.isLoaded" :character="character" />
+      <div v-else>
+      <span class="spinner-border text-primary"></span>
+      </div>
     </div>
   </main>
 </template>
