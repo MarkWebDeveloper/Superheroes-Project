@@ -3,14 +3,22 @@ import { defineStore } from 'pinia'
 
 export const useAuthStore = defineStore('user', () => {
 
-    const users = reactive (
+    const users = reactive ([
         {
+            name: '',
             username: 'admin@gmail.com',
             password: 'myPassword',
             isAuthenticated: false
         },
         
 
-    )
-    return { users }
+    ]);
+
+    const addUser = (newUser) => {
+        users.push(newUser);
+    };
+
+
+
+    return { users, addUser}
 })  

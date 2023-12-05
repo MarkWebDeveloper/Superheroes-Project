@@ -2,12 +2,24 @@
 
 import { ref } from "vue";
 import { useShowHideForm } from '../../stores/showForm.js';
+import { useAuthStore } from '@/stores/user.js';
+
+const store = useAuthStore()
 
 const name= ref('')
 const email = ref ('')
 const password = ref ('')
 
 const store2 = useShowHideForm()
+
+let newUser = {} 
+
+/* 
+const newUser = users.find(user => user.username == providedUsername && user.password == providedPassword);
+
+    if (newUser) {
+            newUser.isAuthenticated = true;
+    } */
 
 </script>
 
@@ -34,7 +46,7 @@ const store2 = useShowHideForm()
                         <input type="password" placeholder="Password" class="input-control" v-model="password">
 
                     </div>
-                <button type="submit" class="btn">REGISTER</button>
+                <button type="submit" class="btn" @click="store.addUser(), console.log(store.users)">REGISTER</button>
 
                 </form>
             </div>
