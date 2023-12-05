@@ -6,13 +6,25 @@ import { useAuthStore } from '@/stores/user.js';
 
 const store = useAuthStore()
 
-const name= ref('')
-const email = ref ('')
-const password = ref ('')
+let name = ref('')
+let email = ref ('')
+let password = ref ('')
 
 const store2 = useShowHideForm()
 
-let newUser = {} 
+let newUser = {
+    name: '',
+    email: '',
+    password: '',
+    isAuthenticated: false
+} 
+
+function fillUser(n, e, p) {
+    newUser.name = n
+    newUser.email = e
+    newUser.password = p
+    newUser.isAuthenticated = true
+}
 
 /* 
 const newUser = users.find(user => user.username == providedUsername && user.password == providedPassword);
@@ -46,7 +58,7 @@ const newUser = users.find(user => user.username == providedUsername && user.pas
                         <input type="password" placeholder="Password" class="input-control" v-model="password">
 
                     </div>
-                <button type="submit" class="btn" @click="store.addUser(), console.log(store.users)">REGISTER</button>
+                <button type="submit" class="btn" @click="fillUser(name, email, password), store.addUser(newUser), console.log(store.users)">REGISTER</button>
 
                 </form>
             </div>
