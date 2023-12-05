@@ -61,12 +61,11 @@ main {
 }
 
 @media only screen and (min-width: 768px) {
-  #cards-container {
-    width: 20%;
-    height: 70vh;
+    #cards-container {
+    width: 70%;
     display: grid;
     grid-template-columns: repeat(5, 17%);
-    //grid-auto-rows: 50%;
+    grid-auto-rows: 50%;
     row-gap: 6%;
   }
 }
