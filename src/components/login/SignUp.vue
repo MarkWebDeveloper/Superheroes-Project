@@ -26,15 +26,6 @@ function fillUser(n, e, p) {
     newUser.isAuthenticated = true
 }
 
-/* 
-const newUser = users.find(user => user.name == name && user.username == email && user.password == password );
-
-    if (newUser) {
-            newUser.isAuthenticated = true;
-    } else{
-        console.log("Credenciales incorrectas. Por favor, inténtalo de nuevo.");
-    } */
-
 </script>
 
 <template>
