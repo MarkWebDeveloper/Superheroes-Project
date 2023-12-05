@@ -13,6 +13,7 @@ const toggleDropdown = () => {
 <template>
 
     <div id="dropdown-menu" @click="toggleDropdown" :class="{ 'clicked': isDropdownOpen }"> FILTER
+      <img src="/images/icons/arrow.png" alt="">
 
     <ul class="dropdown-list" v-show="isDropdownOpen">
 
@@ -35,10 +36,19 @@ const toggleDropdown = () => {
   display: inline-block;
   background-color: black;
   color: white;
+  width: 25%;
+
+  margin-top: 5%;
+  margin-left: 65%;
 
   padding: 10px;
   font-family: 'Cormorant Garamond', serif;
   cursor: pointer;
+  border-radius: 10px;
+
+  img {
+    width: 20%;
+  }
 }
 
 .dropdown-list {
@@ -49,6 +59,8 @@ const toggleDropdown = () => {
   padding: 0;
   background-color: #f9f9f9;
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+
+  z-index: 99;
 }
 
 .dropdown-list li {
