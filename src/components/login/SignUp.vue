@@ -12,13 +12,14 @@ const password = ref ('')
 
 const store2 = useShowHideForm()
 
-let newUser = {} 
 
 /* 
-const newUser = users.find(user => user.username == providedUsername && user.password == providedPassword);
+const newUser = users.find(user => user.name == name && user.username == email && user.password == password );
 
     if (newUser) {
             newUser.isAuthenticated = true;
+    } else{
+        console.log("Credenciales incorrectas. Por favor, inténtalo de nuevo.");
     } */
 
 </script>
