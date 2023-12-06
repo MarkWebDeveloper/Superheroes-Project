@@ -1,6 +1,7 @@
 <script setup>
 import { useApiCharactersStore } from '../stores/ApiCharactersStore.js';
 import Card from '../components/general/Card.vue';
+import SearchBar from '../components/home/SearchBar.vue';
 
 const store = useApiCharactersStore()
 
@@ -17,6 +18,9 @@ const store = useApiCharactersStore()
     </div>
     <div id="cards-container">
       <Card v-for="character in store.characters" v-if="store.isLoaded" :character="character" />
+    </div>
+    <div id="buttons-container">
+      <SearchBar id="searchbar-mobile" />
     </div>
   </main>
 </template>
@@ -60,6 +64,14 @@ main {
   row-gap: 3%;
   padding: 2%;
   overflow-y: scroll;
+}
+
+#buttons-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 5%;
 }
 
 @media only screen and (min-width: 768px) {
