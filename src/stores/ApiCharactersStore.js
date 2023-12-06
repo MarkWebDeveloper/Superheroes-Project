@@ -10,13 +10,16 @@ export const useApiCharactersStore = defineStore('apiCharacters', () => {
 
   let characters = reactive([])
   let isLoaded = ref(false)
+  let isHidden = ref(false)
+  let searchedCharacterName = ref('')
 
   const showOnlyTen = computed(() => characters.slice(0, 10))
+  let showSelectedCharacters = computed((name) => characters.filter((character) => character.name.includes(name)))
 
   async function setCharacters() {
     this.characters = await service.index()
     isLoaded.value = true
   }
 
-  return { characters, isLoaded, setCharacters, showOnlyTen }
+  return { characters, isLoaded, setCharacters, showOnlyTen, isHidden, showSelectedCharacters, searchedCharacterName }
 })

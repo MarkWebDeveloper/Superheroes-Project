@@ -4,21 +4,22 @@ import { useApiCharactersStore } from '../../stores/ApiCharactersStore';
 
 const store = useApiCharactersStore()
 
-let searchedCharacterName = ref('')
-let searchedCharacters = reactive([])
-
 function searchCharacters(name){
-    let result = store.characters.filter((character) => character.name.includes(name))
-    searchedCharacters = result
-    console.log(searchedCharacters)
+    if (name != '') {
+        let result = store.characters.filter((character) => character.name.includes(name))
+        store.characters = result
+    } else {
+        store.setCharacters()
+    }
+    
 }
 
 </script>
 
 <template>
     <div>
-        <input type="text" placeholder="Search" v-model="searchedCharacterName">
-        <button type="button" @click="searchCharacters(searchedCharacterName)">S</button>
+        <input type="text" placeholder="Search" v-model="store.searchedCharacterName">
+        <button type="button" @click="searchCharacters(store.searchedCharacterName)">S</button>
     </div>
 </template>
 

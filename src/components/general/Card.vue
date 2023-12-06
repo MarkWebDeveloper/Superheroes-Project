@@ -1,10 +1,12 @@
 <script setup>
 import { useFavouriteCharactersStore } from '../../stores/FavouriteCharactersStore';
+import { useApiCharactersStore } from '../../stores/ApiCharactersStore';
 const props = defineProps({
   character: Object
 })
 
-const store = useFavouriteCharactersStore()
+const store = useApiCharactersStore()
+const storeFav = useFavouriteCharactersStore()
 
 let isHero = true
 
@@ -20,11 +22,11 @@ checkIfHero()
 </script>
 
 <template>
-  <div class="card" :class="{ hero: isHero }">
+  <div class="card" :class="{ hero: isHero, hidden: store.isHidden }">
 
     <div class="card-photo-container">
       <img :src="character.image" class="card-img" alt="...">
-      <button class="add-character" @click="store.addCharacter(character), console.log(store.favouriteCharacters)">
+      <button class="add-character" @click="storeFav.addCharacter(character), console.log(storeFav.favouriteCharacters)">
         <img src="/images/icons/add.webp" alt="add button image">
       </button>
     </div>
@@ -53,6 +55,10 @@ checkIfHero()
 
 .hero {
   background-color: #5492EE;
+}
+
+.hidden {
+  display: none;
 }
 
 .card-photo-container {
