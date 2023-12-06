@@ -14,7 +14,7 @@ function searchCharacters(name){
         store.characters = result
     } else {
         store.characters = []
-        store.setCharacters()
+        store.characters = store.originalCharacters
     }
     
 }

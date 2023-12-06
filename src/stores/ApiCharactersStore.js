@@ -9,6 +9,7 @@ export const useApiCharactersStore = defineStore('apiCharacters', () => {
   const service = new CharactersService(repository)
 
   let characters = reactive([])
+  let originalCharacters = reactive([])
   let isLoaded = ref(false)
   let isHidden = ref(false)
   let searchedCharacterName = ref('')
@@ -18,8 +19,9 @@ export const useApiCharactersStore = defineStore('apiCharacters', () => {
 
   async function setCharacters() {
     this.characters = await service.index()
+    this.originalCharacters = this.characters
     isLoaded.value = true
   }
 
-  return { characters, isLoaded, setCharacters, showOnlyTen, isHidden, showSelectedCharacters, searchedCharacterName }
+  return { characters, isLoaded, setCharacters, showOnlyTen, isHidden, showSelectedCharacters, searchedCharacterName, originalCharacters }
 })
