@@ -10,7 +10,7 @@ function searchCharacters(name){
         const firstLetterCap = firstLetter.toUpperCase()
         const remainingLetters = name.slice(1)
         const capitalizedName = firstLetterCap + remainingLetters.toLowerCase()
-        let result = store.characters.filter((character) => character.name.includes(capitalizedName))
+        let result = store.originalCharacters.filter((character) => character.name.includes(capitalizedName))
         store.characters = result
     } else {
         store.characters = []

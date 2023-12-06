@@ -15,7 +15,7 @@ export const useApiCharactersStore = defineStore('apiCharacters', () => {
   let searchedCharacterName = ref('')
 
   const showOnlyTen = computed(() => characters.slice(0, 10))
-  let showSelectedCharacters = computed((name) => characters.filter((character) => character.name.includes(name)))
+  let searchedCharactersArray = computed((searchedCharacterName) => characters.filter((character) => character.name.includes(searchedCharacterName)))
 
   async function setCharacters() {
     this.characters = await service.index()
@@ -23,5 +23,5 @@ export const useApiCharactersStore = defineStore('apiCharacters', () => {
     isLoaded.value = true
   }
 
-  return { characters, isLoaded, setCharacters, showOnlyTen, isHidden, showSelectedCharacters, searchedCharacterName, originalCharacters }
+  return { characters, isLoaded, setCharacters, showOnlyTen, isHidden, searchedCharactersArray, searchedCharacterName, originalCharacters }
 })
