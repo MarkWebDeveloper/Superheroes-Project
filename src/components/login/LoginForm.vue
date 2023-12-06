@@ -5,25 +5,24 @@ import { useAuthStore } from '@/stores/user.js';
 import { useRoute, useRouter } from "vue-router";
 
 import { useShowHideForm } from '../../stores/showForm.js';
+import { login } from "./login.js";
 
 const store2 = useShowHideForm()
 
 const store = useAuthStore()
 
-const route = useRoute()
-const router = useRouter()
+export const route = useRoute()
+export const router = useRouter()
 
-const email = ref ('')
-const password = ref ('')
+export const email = ref ('')
+export const password = ref ('')
 
 
 
 function login(){
-    if (email.value == store.users.username && password.value == store.users.password) {
-        store.users.isAuthenticated = true
-    const redirectPath = route.query.redirect || '/favourites'
-        router.push(redirectPath) 
-    }
+    if (username.value == store.users.email && password.value == store.users.password) {
+        store.user.isAuthenticated = true
+}
 }
 
 

@@ -35,12 +35,6 @@ function redirectToFavourites() {
     router.push(redirectPath) 
 }
 
-/* 
-const newUser = users.find(user => user.username == providedUsername && user.password == providedPassword);
-
-    if (newUser) {
-            newUser.isAuthenticated = true;
-    } */
 
 </script>
 
