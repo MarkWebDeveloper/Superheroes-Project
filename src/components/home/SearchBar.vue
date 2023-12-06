@@ -7,9 +7,8 @@ const store = useApiCharactersStore()
 function searchCharacters(name){
     if (name != '') {
         const firstLetter = name.charAt(0)
-        const firstLetterCap = firstLetter.toUpperCase()
         const remainingLetters = name.slice(1)
-        const capitalizedName = firstLetterCap + remainingLetters.toLowerCase()
+        const capitalizedName = firstLetter.toUpperCase() + remainingLetters.toLowerCase()
         let result = store.originalCharacters.filter((character) => character.name.includes(capitalizedName))
         store.characters = result
     } else {
