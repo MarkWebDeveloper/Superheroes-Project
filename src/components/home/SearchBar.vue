@@ -1,11 +1,24 @@
 <script setup>
+import { reactive, ref } from 'vue';
+import { useApiCharactersStore } from '../../stores/ApiCharactersStore';
+
+const store = useApiCharactersStore()
+
+let searchedCharacterName = ref('')
+let searchedCharacters = reactive([])
+
+function searchCharacters(name){
+    let result = store.characters.filter((character) => character.name.includes(name))
+    searchedCharacters = result
+    console.log(searchedCharacters)
+}
 
 </script>
 
 <template>
     <div>
-        <input type="text" placeholder="Search">
-        <button type="button">S</button>
+        <input type="text" placeholder="Search" v-model="searchedCharacterName">
+        <button type="button" @click="searchCharacters(searchedCharacterName)">S</button>
     </div>
 </template>
 
