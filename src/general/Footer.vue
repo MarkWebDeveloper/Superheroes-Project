@@ -32,7 +32,7 @@
 @media only screen and (min-width: 768px) {
     .footer {
         background-color: black;
-
+        height: 5vh;
         display: flex;
         justify-content: center;
         align-items: center;

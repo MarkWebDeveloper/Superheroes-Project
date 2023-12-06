@@ -12,6 +12,9 @@ const store = useApiCharactersStore()
 
 <template>
   <main>
+    <div id="title-container">
+      <h1 id="title">Heroes and Villains</h1>
+    </div>
     <div id="cards-container">
       <Card v-for="character in store.characters" v-if="store.isLoaded" :character="character" />
     </div>
@@ -23,19 +26,32 @@ const store = useApiCharactersStore()
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Space+Grotesk&display=swap');
 
 main {
-  height: 90%;
-  width: 100%;
+  height: 90vh;
   background-image: url("./images/background/black-and-white-background.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
 }
 
+#title-container {
+  height: 7vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+#title {
+  font-family: 'Press Start 2P', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2.2vmax;
+}
+
 #cards-container {
   margin: 0 auto;
   position: relative;
   width: 100%;
-  height: 70vh;
+  height: 85%;
   display: grid;
   grid-template-columns: repeat(2, 45%);
   grid-auto-rows: 31%;
@@ -47,6 +63,9 @@ main {
 }
 
 @media only screen and (min-width: 768px) {
+  main {
+    height: 85vh;
+  }
   #cards-container {
     width: 70%;
     display: grid;

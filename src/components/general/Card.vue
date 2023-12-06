@@ -70,7 +70,7 @@ checkIfHero()
 }
 
 .add-character {
-  width: 30px;
+  width: 3vmax;
   align-self: flex-start;
   margin-left: auto;
   margin-right: 1vmax;
@@ -115,10 +115,11 @@ checkIfHero()
 @media only screen and (min-width: 768px) {
 
   .card-img {
-  height: 18%;
+  height: 15%;
 }
 
   .add-character {
+  width: 2vmax;
   margin-right: 0.3vmax;
   margin-top: 0.3vmax;
 }
