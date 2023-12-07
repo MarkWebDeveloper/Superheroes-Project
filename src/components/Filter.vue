@@ -8,23 +8,43 @@ const toggleDropdown = () => {
   isDropdownOpen.value = !isDropdownOpen.value;
 };
 
+function filterCharacter(race) {
+  let result = store.originalCharacters.filter((character) => character.race = human)
+  store.characters = result
+}
+
 </script>
 
 <template>
 
     <div id="dropdown-menu" @click="toggleDropdown" :class="{ 'clicked': isDropdownOpen }"> FILTER
-      <img src="/images/icons/arrow.png" alt="">
+        <img src="/images/icons/arrow.png" alt="">
 
-    <ul class="dropdown-list" v-show="isDropdownOpen">
+      <ul class="dropdown-list" v-show="isDropdownOpen">
 
-      <li class="item-1"> <a href="#"> HUMAN </a> </li>
-      <li class="item-2"> <a href="#"> CYBORG </a> </li>
-      <li class="item-3"> <a href="#"> ALIEN </a> </li>
-      <li class="item-4"> <a href="#"> DEMON </a> </li>
+      <li class="item-1">
+        <input type="checkbox">
+        <label class="item-1"> <a href="#"> HUMAN </a> </label>
+      </li>
 
-    </ul>
+      <li class="item-2">
+        <input type="checkbox">
+        <label class="item-2"> <a href="#"> CYBORG </a> </label>
+      </li>
 
-    </div>
+      <li class="item-3">
+        <input type="checkbox">
+        <label class="item-3"> <a href="#"> ALIEN </a> </label>
+      </li>
+
+      <li class="item-4">
+        <input type="checkbox">
+        <label class="item-4"> <a href="#"> DEMON </a> </label>
+      </li>
+
+      </ul>
+
+      </div>
 
 </template>
 
@@ -64,7 +84,7 @@ const toggleDropdown = () => {
 }
 
 .dropdown-list li {
-  padding: 10px;
+  padding: 5px;
   text-align: left;
   border: 1px solid black;
 }
@@ -78,6 +98,10 @@ const toggleDropdown = () => {
   #dropdown-menu {
     width: 8%;
     margin-left: 75%;
+  }
+
+  .dropdown-list li {
+    padding: 4px;
   }
 }
 
