@@ -26,6 +26,17 @@ const password = ref ('')
 
 } */
 
+function login(){
+    // let introducedUser = store.users.filter((user) => user.username == email.value && user.password == password.value)
+    // store.users.
+
+    for (let index = 0; index < store.users.length; index++) {
+        if (store.users[index].username == email.value && store.users[index].password == password.value) {
+            store.users[index].isAuthenticated = true
+        }
+    }
+}
+
 function redirectToFavourites() {
     const redirectPath = route.query.redirect || '/favourites'
     router.push(redirectPath) 
@@ -42,7 +53,7 @@ function redirectToFavourites() {
             <div class="box">
                 <h2>LOGIN SESSION</h2>
                 
-                <form @submit.prevent="login">
+                <form @submit.prevent="login, redirectToFavourites()">
                     <div class="input-box">
                         <input type="email"  name="email"  id="email" placeholder="Email" class="input-control" v-model="email">
 
