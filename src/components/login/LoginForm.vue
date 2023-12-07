@@ -19,10 +19,17 @@ export const password = ref ('')
 
 
 
+
 function login(){
     if (username.value == store.users.email && password.value == store.users.password) {
         store.user.isAuthenticated = true
 }
+
+}
+
+function redirectToFavourites() {
+    const redirectPath = route.query.redirect || '/favourites'
+    router.push(redirectPath) 
 }
 
 
