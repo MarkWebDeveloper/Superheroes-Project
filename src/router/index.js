@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import { useAuthStore} from '../stores/user.js'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -22,7 +23,29 @@ const router = createRouter({
       name: 'favourites',
       component: () => import('../views/FavouritesView.vue')
     }
+
   ]
+
+
 })
 
+
+/*beforeEach nos inyecta tres parámetros en la función de callback: to: Es el objeto router con la 
+información de la ruta a la que voy. from: Es el objeto router con la información
+ de la ruta de la que vengo. next: Es la función que me permite reanudar la navegación. */
+
+router.beforeEach( (to, from) => {
+
+  const store = useAuthStore()
+  
+  if (to.meta.requiresAuth && !store.users.isAuthenticated) {
+  
+  return { name: 'login'}
+  }
+  
+  })
+
+
 export default router
+
+
