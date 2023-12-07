@@ -1,12 +1,15 @@
 <script setup>
 
 import { ref } from 'vue';
+import { useApiCharactersStore } from '../stores/ApiCharactersStore';
 
 const isDropdownOpen = ref(false);
 
 const toggleDropdown = () => {
   isDropdownOpen.value = !isDropdownOpen.value;
 };
+
+const store = useApiCharactersStore();
 
 function filterCharacter(race) {
   let result = store.originalCharacters.filter((character) => character.race = human)
