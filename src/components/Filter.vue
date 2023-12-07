@@ -73,4 +73,12 @@ const toggleDropdown = () => {
   display: block;
 }
 
+@media only screen and (min-width: 768px) {
+
+  #dropdown-menu {
+    width: 8%;
+    margin-left: 75%;
+  }
+}
+
 </style>
