@@ -23,7 +23,7 @@ function searchCharacters(name){
 <template>
     <div>
         <input type="text" placeholder="Search" v-model="store.searchedCharacterName">
-        <button type="button" @click="searchCharacters(store.searchedCharacterName)">S</button>
+        <button type="button" @click="searchCharacters(store.searchedCharacterName)"><img src="/images/icons/search.png" alt=""></button>
     </div>
 </template>
 
@@ -32,7 +32,7 @@ function searchCharacters(name){
 
     div {
         width: 35vw;
-        height: 100%;
+        height: 4vh;
         background-color: black;
         border-radius: 10px;
 
@@ -40,11 +40,16 @@ function searchCharacters(name){
 
     input {
         width: 75%;
+        height: 100%;
         background-color: transparent;
         color: white;
         font-family: 'Space Grotesk', serif;
         border-radius: 10px;
         border-style: none;
+    }
+
+    img {
+        height: 100%;
     }
 
     ::placeholder {
