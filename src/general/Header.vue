@@ -42,7 +42,7 @@ const isLoggedIn = ref(false)
     #headerContainer {
 
         width: 100%;
-        height: 100%;
+        height: 10vh;
 
         background-color: black;
 
@@ -79,7 +79,7 @@ const isLoggedIn = ref(false)
         }
 
         img {
-            width: 40%;
+            height: 100%;
         }
     }
 
