@@ -1,10 +1,12 @@
 <script setup>
+import { useFavouriteCharactersStore } from './../../stores/FavouriteCharactersStore';
 
+const storeFav = useFavouriteCharactersStore()
 </script>
 
 <template>
     
-    <button>ADD HERO</button>
+    <button type="button" @click="storeFav.openClosePopup()">ADD HERO</button>
 
 </template>
 

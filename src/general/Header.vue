@@ -51,7 +51,7 @@ const isLoggedIn = ref(false)
         flex-direction: row;
         align-content: center;
 
-        font-family: 'Cormorant Garamond', serif;
+        font-family: 'Space Grotesk', serif;
         color: white;
         width: 100%;
 

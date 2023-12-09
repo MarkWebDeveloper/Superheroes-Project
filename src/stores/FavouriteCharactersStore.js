@@ -4,11 +4,19 @@ import { defineStore } from 'pinia'
 export const useFavouriteCharactersStore = defineStore('favCharacters', () => {
 
   let favouriteCharacters = reactive([])
-  let isLoaded = ref(false)
+  let popupOpened = ref(false)
 
   function addCharacter(char) {
     favouriteCharacters.push(char)
   }
 
-  return { favouriteCharacters, isLoaded, addCharacter}
+  function openClosePopup() {
+    if (popupOpened.value == false) {
+      popupOpened.value = true
+    } else {
+      popupOpened.value = false
+    }
+  }
+
+  return { favouriteCharacters, openClosePopup, popupOpened, addCharacter}
 })

@@ -1,14 +1,19 @@
 <script setup>
 import AddHero from '../components/favourites/AddHero.vue'
+import Popup from '../components/favourites/Popup.vue';
 import CardFavourites from '../components/general/CardFavourites.vue';
 import { useApiCharactersStore } from '../stores/ApiCharactersStore';
 import { useFavouriteCharactersStore } from '../stores/FavouriteCharactersStore';
 
 const store = useApiCharactersStore()
+const storeFav = useFavouriteCharactersStore()
+
 </script>
 
 <template>
   <main>
+    <Popup v-if="storeFav.popupOpened"/>
+
     <div>
       <h1>FAVOURITES</h1>
     </div>
