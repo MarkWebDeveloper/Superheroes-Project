@@ -15,14 +15,13 @@ function searchCharacters(name){
         store.characters = []
         store.characters = store.originalCharacters
     }
-    
 }
 
 </script>
 
 <template>
     <div>
-        <input type="text" placeholder="Search" v-model="store.searchedCharacterName">
+        <input type="text" placeholder="Search" v-model="store.searchedCharacterName" @keyup.enter="searchCharacters(store.searchedCharacterName)">
         <button type="button" @click="searchCharacters(store.searchedCharacterName)"><img src="/images/icons/search.png" alt=""></button>
     </div>
 </template>
