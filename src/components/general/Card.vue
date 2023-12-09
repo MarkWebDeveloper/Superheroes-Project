@@ -26,7 +26,7 @@ checkIfHero()
 
     <div class="card-photo-container">
       <img :src="character.image" class="card-img" alt="...">
-      <button class="add-character" @click="storeFav.addCharacter(character), console.log(storeFav.favouriteCharacters)">
+      <button class="add-character" @click="storeFav.addCharacter(character)">
         <img src="/images/icons/add.webp" alt="add button image">
       </button>
     </div>

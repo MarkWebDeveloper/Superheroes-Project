@@ -17,7 +17,7 @@ button {
     background-color: black;
     color: white;
     padding: 10px;
-    margin-left: 10.8%;
-    margin-bottom: 2%;
 }
+
+
 </style>

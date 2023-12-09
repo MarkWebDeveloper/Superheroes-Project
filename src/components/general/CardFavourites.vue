@@ -23,26 +23,27 @@ checkIfHero()
 
 <template>
   <div id="rating-cards-container">
-    <form>
-      <div id="clasificacion">
-        <input id="radio1" type="radio" name="estrellas" value="5">
-        <label for="radio1">★</label>
-        <input id="radio2" type="radio" name="estrellas" value="4">
-        <label for="radio2">★</label>
-        <input id="radio3" type="radio" name="estrellas" value="3">
-        <label for="radio3">★</label>
-        <input id="radio4" type="radio" name="estrellas" value="2">
-        <label for="radio4">★</label>
-        <input id="radio5" type="radio" name="estrellas" value="1">
-        <label for="radio5">★</label>
-      </div>
-    </form>
-    <div class="card" :class="{ hero: isHero, hidden: store.isHidden }">
+    <div id="rating-remove-container">
+      <form>
+        <div id="clasification">
+          <input id="radio1" type="radio" name="stars" value="1">
+          <label for="radio1">★</label>
+          <input id="radio2" type="radio" name="stars" value="2">
+          <label for="radio2">★</label>
+          <input id="radio3" type="radio" name="stars" value="3">
+          <label for="radio3">★</label>
+          <input id="radio4" type="radio" name="stars" value="4">
+          <label for="radio4">★</label>
+          <input id="radio5" type="radio" name="stars" value="5">
+          <label for="radio5">★</label>
+        </div>
+      </form>
+    </div>
+    <div class="card" :class="{ hero: isHero }">
 
       <div class="card-photo-container">
         <img :src="character.image" class="card-img" alt="...">
-        <button class="add-character"
-          @click="storeFav.addCharacter(character), console.log(storeFav.favouriteCharacters)">
+        <button class="add-character" @click="storeFav.addCharacter(character)">
           <img src="/images/icons/add.webp" alt="add button image">
         </button>
       </div>
@@ -63,15 +64,23 @@ checkIfHero()
 </template>
 
 <style scoped lang="scss">
+
 #rating-cards-container {
   height: 100%;
   width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: space-between;
+  align-items: center;
 }
 
-#clasificacion{
+#rating-remove-container {
+  height: 10%;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#clasification{
 
   direction: rtl;
   unicode-bidi: bidi-override;
@@ -96,15 +105,8 @@ checkIfHero()
     color:orange;
   }
 }
-
-#form {
-  // width: 250px;
-  // margin: 0 auto;
-  height: 50px;
-  // text-align: center;
-}
 .card {
-  height: 100%;
+  height: 90%;
   width: 90%;
   border-radius: 10px;
   background-color: #EE5454;
@@ -129,7 +131,7 @@ checkIfHero()
 
 .card-img {
   position: absolute;
-  height: 14%;
+  height: 12%;
 }
 
 .add-character {

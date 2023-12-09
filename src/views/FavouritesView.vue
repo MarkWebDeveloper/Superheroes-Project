@@ -12,7 +12,11 @@ const store = useApiCharactersStore()
     <div>
       <h1>FAVOURITES</h1>
     </div>
-    <AddHero />
+
+    <div id="add-button-container">
+      <AddHero />
+    </div>
+
     <div id="cards-container">
       <CardFavourites v-for="character in store.characters" v-if="store.isLoaded" :character="character" />
     </div>
@@ -22,20 +26,25 @@ const store = useApiCharactersStore()
 <style lang="scss" scoped>
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+main {
+  height: 90vh;
+  background-image: url("./images/background/black-and-white-background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 h1 {
   font-family: 'Press Start 2P';
   padding-top: 3%;
   text-align: center;
   font-size: 30px;
+  margin-bottom: 5%;
 }
 
-main {
-  height: 90%;
-  width: 100%;
-  background-image: url("./images/background/black-and-white-background.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+#add-button-container {
+  display: flex;
+  justify-content: center;
 }
 
 #cards-container {
@@ -66,9 +75,19 @@ main {
     height: 85vh;
   }
 
+  h1 {
+    margin-bottom: 2%;
+  }
+
+  #add-button-container {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 10.8%;
+  }
+
   #title-container {
-  margin-bottom: 2%;
-}
+    margin-bottom: 2%;
+  }
 
   #cards-container {
     width: 80%;
