@@ -1,6 +1,6 @@
 <script setup>
 import AddHero from '../components/favourites/AddHero.vue'
-import Card from '../components/general/Card.vue';
+import CardFavourites from '../components/general/CardFavourites.vue';
 import { useApiCharactersStore } from '../stores/ApiCharactersStore';
 import { useFavouriteCharactersStore } from '../stores/FavouriteCharactersStore';
 
@@ -14,7 +14,7 @@ const store = useApiCharactersStore()
     </div>
     <AddHero />
     <div id="cards-container">
-      <Card v-for="character in store.characters" v-if="store.isLoaded" :character="character" />
+      <CardFavourites v-for="character in store.characters" v-if="store.isLoaded" :character="character" />
     </div>
   </main>
 </template>

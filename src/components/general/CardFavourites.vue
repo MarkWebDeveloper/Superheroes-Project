@@ -22,30 +22,87 @@ checkIfHero()
 </script>
 
 <template>
-  <div class="card" :class="{ hero: isHero, hidden: store.isHidden }">
-
-    <div class="card-photo-container">
-      <img :src="character.image" class="card-img" alt="...">
-      <button class="add-character" @click="storeFav.addCharacter(character), console.log(storeFav.favouriteCharacters)">
-        <img src="/images/icons/add.webp" alt="add button image">
-      </button>
-    </div>
-
-    <div class="card-data-container">
-      <div class="character-name-container">
-        <h1 class="character-name">{{ character.name }}</h1>
+  <div id="rating-cards-container">
+    <form>
+      <div id="clasificacion">
+        <input id="radio1" type="radio" name="estrellas" value="5">
+        <label for="radio1">★</label>
+        <input id="radio2" type="radio" name="estrellas" value="4">
+        <label for="radio2">★</label>
+        <input id="radio3" type="radio" name="estrellas" value="3">
+        <label for="radio3">★</label>
+        <input id="radio4" type="radio" name="estrellas" value="2">
+        <label for="radio4">★</label>
+        <input id="radio5" type="radio" name="estrellas" value="1">
+        <label for="radio5">★</label>
       </div>
-      <div class="character-attributes">
-        <p class="character-intelligence">RACE: {{ character.race }}</p>
-        <p class="character-power">INTELLIGENCE: {{ character.intelligence }}</p>
-        <p class="character-speed">POWER: {{ character.power }}</p>
-      </div>
-    </div>
+    </form>
+    <div class="card" :class="{ hero: isHero, hidden: store.isHidden }">
 
+      <div class="card-photo-container">
+        <img :src="character.image" class="card-img" alt="...">
+        <button class="add-character"
+          @click="storeFav.addCharacter(character), console.log(storeFav.favouriteCharacters)">
+          <img src="/images/icons/add.webp" alt="add button image">
+        </button>
+      </div>
+
+      <div class="card-data-container">
+        <div class="character-name-container">
+          <h1 class="character-name">{{ character.name }}</h1>
+        </div>
+        <div class="character-attributes">
+          <p class="character-intelligence">RACE: {{ character.race }}</p>
+          <p class="character-power">INTELLIGENCE: {{ character.intelligence }}</p>
+          <p class="character-speed">POWER: {{ character.power }}</p>
+        </div>
+      </div>
+
+    </div>
   </div>
 </template>
 
 <style scoped lang="scss">
+#rating-cards-container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+}
+
+#clasificacion{
+
+  direction: rtl;
+  unicode-bidi: bidi-override;
+  
+  label{ 
+    color:grey;
+  }
+  
+  input[type = "radio"]{
+     display:none;
+  };
+
+  label:hover{
+    color:orange;
+  }
+  
+  label:hover ~ label{
+    color:orange;
+  }
+
+  input[type = "radio"]:checked ~ label{
+    color:orange;
+  }
+}
+
+#form {
+  // width: 250px;
+  // margin: 0 auto;
+  height: 50px;
+  // text-align: center;
+}
 .card {
   height: 100%;
   width: 90%;
