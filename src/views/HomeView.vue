@@ -1,7 +1,8 @@
 <script setup>
 import { useApiCharactersStore } from '../stores/ApiCharactersStore.js';
 import Card from '../components/general/Card.vue';
-import SearchBar from '../components/home/SearchBar.vue';
+import SearchBarMobile from '../components/home/SearchBarMobile.vue';
+import SearchBarDesktop from '../components/home/SearchBarDesktop.vue';
 
 const store = useApiCharactersStore()
 
@@ -16,11 +17,14 @@ const store = useApiCharactersStore()
     <div id="title-container">
       <h1 id="title">Heroes and Villains</h1>
     </div>
+    <div id="inputs-container-desktop">
+      <SearchBarDesktop id="searchbar-desktop" />
+    </div>
     <div id="cards-container">
       <Card v-for="character in store.characters" v-if="store.isLoaded" :character="character" />
     </div>
-    <div id="buttons-container">
-      <SearchBar id="searchbar-mobile" />
+    <div id="inputs-container-mobile">
+      <SearchBarMobile id="searchbar-mobile" />
     </div>
   </main>
 </template>
@@ -66,7 +70,7 @@ main {
   overflow-y: scroll;
 }
 
-#buttons-container {
+#inputs-container-mobile {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -78,12 +82,19 @@ main {
   main {
     height: 85vh;
   }
+
+  #title-container {
+  margin-bottom: 2%;
+}
+
   #cards-container {
-    width: 70%;
+    width: 80%;
+    height: 70%;
     display: grid;
-    grid-template-columns: repeat(5, 17%);
+    grid-template-columns: repeat(5, 20%);
     grid-auto-rows: 50%;
     row-gap: 6%;
+    padding: 0;
   }
 }
 </style>
