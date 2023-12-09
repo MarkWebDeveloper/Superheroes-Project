@@ -28,38 +28,43 @@ function searchCharacters(name){
 </template>
 
 <style lang="scss" scoped>
-    @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Space+Grotesk&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Space+Grotesk&display=swap');
 
-    div {
-        width: 35vw;
-        height: 4vh;
-        background-color: black;
-        border-radius: 10px;
+div {
+    width: 35vw;
+    height: 4vh;
+    background-color: black;
+    border-radius: 10px;
 
-    }
+}
 
-    input {
-        width: 75%;
-        height: 100%;
-        background-color: transparent;
-        color: white;
-        font-family: 'Space Grotesk', serif;
-        border-radius: 10px;
-        border-style: none;
-    }
+input {
+    width: 75%;
+    height: 100%;
+    padding-left: 5px;
+    background-color: transparent;
+    color: white;
+    font-family: 'Space Grotesk', serif;
+    border-radius: 10px;
+    border-style: none;
+}
 
-    img {
-        height: 100%;
-    }
+img {
+    height: 100%;
+}
 
-    ::placeholder {
-        color: white;
-        text-transform: uppercase;
-        text-align: center
-    }
+::placeholder {
+    color: white;
+    text-transform: uppercase;
+    text-align: left;
+}
 
-    button {
-        width: 25%;
-        color: white;
-    }
+button {
+    width: 25%;
+    color: white;
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
 </style>
