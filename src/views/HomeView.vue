@@ -2,6 +2,7 @@
 import { useApiCharactersStore } from '../stores/ApiCharactersStore.js';
 import Card from '../components/general/Card.vue';
 import SearchBarMobile from '../components/home/SearchBarMobile.vue';
+import SearchBarDesktop from '../components/home/SearchBarDesktop.vue';
 
 const store = useApiCharactersStore()
 
@@ -15,6 +16,9 @@ const store = useApiCharactersStore()
   <main>
     <div id="title-container">
       <h1 id="title">Heroes and Villains</h1>
+    </div>
+    <div id="inputs-container-desktop">
+      <SearchBarDesktop id="searchbar-desktop" />
     </div>
     <div id="cards-container">
       <Card v-for="character in store.characters" v-if="store.isLoaded" :character="character" />
@@ -78,12 +82,19 @@ main {
   main {
     height: 85vh;
   }
+
+  #title-container {
+  margin-bottom: 2%;
+}
+
   #cards-container {
-    width: 70%;
+    width: 85%;
+    height: 70%;
     display: grid;
-    grid-template-columns: repeat(5, 17%);
+    grid-template-columns: repeat(5, 20%);
     grid-auto-rows: 50%;
     row-gap: 6%;
+    padding: 0;
   }
 }
 </style>

@@ -34,7 +34,7 @@ div {
     height: 4vh;
     background-color: black;
     border-radius: 10px;
-
+    margin-left: 7.5%;
 }
 
 input {
@@ -65,11 +65,5 @@ button {
 
 input:focus::placeholder {
   color: transparent;
-}
-
-@media only screen and (min-width: 768px) {
-    div {
-        display: none;
-    }
 }
 </style>
