@@ -31,10 +31,12 @@ function searchCharacters(name){
 
 div {
     width: 35vw;
-    height: 4vh;
+    height: 5vh;
     background-color: black;
-    border-radius: 10px;
-    margin-left: 7.5%;
+    margin-left: 8.3%;
+    margin-bottom: 2%;
+    display: flex;
+    justify-content: space-between;
 }
 
 input {
@@ -59,11 +61,17 @@ img {
 }
 
 button {
-    width: 25%;
+    height: 100%;
     color: white;
 }
 
 input:focus::placeholder {
   color: transparent;
+}
+
+@media only screen and (max-width: 768px) {
+    div {
+        display: none;
+    }
 }
 </style>
