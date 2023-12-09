@@ -88,7 +88,7 @@ main {
 }
 
   #cards-container {
-    width: 85%;
+    width: 80%;
     height: 70%;
     display: grid;
     grid-template-columns: repeat(5, 20%);

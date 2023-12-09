@@ -121,7 +121,7 @@ checkIfHero()
 @media only screen and (min-width: 768px) {
 
   .card-img {
-  height: 15%;
+  height: 22%;
 }
 
   .add-character {
