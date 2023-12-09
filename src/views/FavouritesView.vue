@@ -1,14 +1,21 @@
 <script setup>
 import AddHero from '../components/favourites/AddHero.vue'
+import Card from '../components/general/Card.vue';
+import { useApiCharactersStore } from '../stores/ApiCharactersStore';
+import { useFavouriteCharactersStore } from '../stores/FavouriteCharactersStore';
+
+const store = useApiCharactersStore()
 </script>
 
 <template>
   <main>
     <div>
-      <h1>FAVORITES</h1>
+      <h1>FAVOURITES</h1>
     </div>
-
     <AddHero />
+    <div id="cards-container">
+      <Card v-for="character in store.characters" v-if="store.isLoaded" :character="character" />
+    </div>
   </main>
 </template>
   
@@ -17,7 +24,7 @@ import AddHero from '../components/favourites/AddHero.vue'
 
 h1 {
   font-family: 'Press Start 2P';
-  padding: 30px;
+  padding-top: 3%;
   text-align: center;
   font-size: 30px;
 }
@@ -29,6 +36,49 @@ main {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+
+#cards-container {
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+  height: 85%;
+  display: grid;
+  grid-template-columns: repeat(2, 45%);
+  grid-auto-rows: 31%;
+  justify-content: center;
+  justify-items: center;
+  row-gap: 3%;
+  padding: 2%;
+  overflow-y: auto;
+}
+
+#inputs-container-mobile {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 5%;
+}
+
+@media only screen and (min-width: 768px) {
+  main {
+    height: 85vh;
+  }
+
+  #title-container {
+  margin-bottom: 2%;
+}
+
+  #cards-container {
+    width: 80%;
+    height: 70%;
+    display: grid;
+    grid-template-columns: repeat(5, 20%);
+    grid-auto-rows: 50%;
+    row-gap: 6%;
+    padding: 0;
+  }
 }
 </style>
   
