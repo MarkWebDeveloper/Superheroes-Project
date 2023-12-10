@@ -9,21 +9,11 @@ const props = defineProps({
 const store = useApiCharactersStore()
 const storeFav = useFavouriteCharactersStore()
 
-let isHero = true
-
-const checkIfHero = () => {
-  if (props.character.alignment == 'good') {
-    isHero = true
-  } else {
-    isHero = false
-  }
-}
+let editing = false
 
 const removeCharacter = () => {
-  storeFav.favouriteCharacters.splice(storeFav.favouriteCharacters.findIndex(e => e.name === props.character.name), 1)
+  storeFav.favouriteCharacters.splice(props.index, 1)
 }
-
-checkIfHero()
 </script>
 
 <template>
@@ -45,11 +35,11 @@ checkIfHero()
         </div>
       </form>
     </div>
-    <div class="card" :class="{ hero: isHero }">
+    <div class="card" :class="{ hero: character.alignment == 'good' }">
 
       <div class="card-photo-container">
         <img :src="character.image" class="card-img" alt="...">
-        <button class="edit-character-button" @click="storeFav.addCharacter(character)">
+        <button class="edit-character-button">
           <img src="/images/icons/edit.png" alt="add button image">
         </button>
       </div>
@@ -57,6 +47,7 @@ checkIfHero()
       <div class="card-data-container">
         <div class="character-name-container">
           <h1 class="character-name">{{ character.name }}</h1>
+          <input type="text" name="hero-name" id="hero-name-input" v-if="editing">
         </div>
         <div class="character-attributes">
           <p class="character-intelligence">RACE: {{ character.race }}</p>
@@ -175,7 +166,7 @@ form {
 }
 
 .character-name {
-  font-size: 1.5vh;
+  font-size: 1.5vmax;
   word-wrap: break-word;
   text-transform: uppercase;
   font-family: 'Press Start 2P', sans-serif;
@@ -194,6 +185,10 @@ form {
 }
 
 @media only screen and (min-width: 768px) {
+
+  .character-name {
+  font-size: 1vmax;
+}
 
   .card-img {
   height: 40%;
