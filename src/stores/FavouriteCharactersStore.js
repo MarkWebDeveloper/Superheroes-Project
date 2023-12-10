@@ -18,5 +18,11 @@ export const useFavouriteCharactersStore = defineStore('favCharacters', () => {
     }
   }
 
-  return { favouriteCharacters, openClosePopup, popupOpened, addCharacter}
+  function addEditingAttribute() {
+    for (let index = 0; index < favouriteCharacters.length; index++) {
+      favouriteCharacters[index].isBeingEdited = false
+    }
+  }
+
+  return { favouriteCharacters, openClosePopup, popupOpened, addCharacter, addEditingAttribute}
 })

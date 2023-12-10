@@ -9,7 +9,13 @@ const props = defineProps({
 const store = useApiCharactersStore()
 const storeFav = useFavouriteCharactersStore()
 
-let editing = false
+const toggleEditHero = () => {
+  if (props.character.isBeingEdited == false) {
+    props.character.isBeingEdited = true
+  } else {
+    props.character.isBeingEdited = false
+  }
+}
 
 const removeCharacter = () => {
   storeFav.favouriteCharacters.splice(props.index, 1)
@@ -40,14 +46,14 @@ const removeCharacter = () => {
       <div class="card-photo-container">
         <img :src="character.image" class="card-img" alt="...">
         <button class="edit-character-button">
-          <img src="/images/icons/edit.png" alt="add button image">
+          <img src="/images/icons/edit.png" alt="edit button image" @click="toggleEditHero">
         </button>
       </div>
 
       <div class="card-data-container">
         <div class="character-name-container">
-          <h1 class="character-name">{{ character.name }}</h1>
-          <input type="text" name="hero-name" id="hero-name-input" v-if="editing">
+          <h1 class="character-name" v-if="!character.isBeingEdited">{{ character.name }}</h1>
+          <input type="text" name="hero-name" id="hero-name-input" :value="character.name" v-if="character.isBeingEdited">
         </div>
         <div class="character-attributes">
           <p class="character-intelligence">RACE: {{ character.race }}</p>

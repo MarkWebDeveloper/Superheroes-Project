@@ -8,6 +8,8 @@ import { useFavouriteCharactersStore } from '../stores/FavouriteCharactersStore'
 const store = useApiCharactersStore()
 const storeFav = useFavouriteCharactersStore()
 
+storeFav.addEditingAttribute()
+
 </script>
 
 <template>
