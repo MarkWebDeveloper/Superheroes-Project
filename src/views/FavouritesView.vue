@@ -23,7 +23,7 @@ const storeFav = useFavouriteCharactersStore()
     </div>
 
     <div id="cards-container">
-      <CardFavourites v-for="character in store.characters" v-if="store.isLoaded" :character="character" />
+      <CardFavourites v-for="(character, index) in storeFav.favouriteCharacters" :character="character" :index="index" />
     </div>
   </main>
 </template>

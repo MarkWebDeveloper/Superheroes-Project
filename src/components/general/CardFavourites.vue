@@ -2,7 +2,8 @@
 import { useFavouriteCharactersStore } from '../../stores/FavouriteCharactersStore';
 import { useApiCharactersStore } from '../../stores/ApiCharactersStore';
 const props = defineProps({
-  character: Object
+  character: Object,
+  index: Number
 })
 
 const store = useApiCharactersStore()
@@ -18,13 +19,17 @@ const checkIfHero = () => {
   }
 }
 
+const removeCharacter = () => {
+  storeFav.favouriteCharacters.splice(storeFav.favouriteCharacters.findIndex(e => e.name === props.character.name), 1)
+}
+
 checkIfHero()
 </script>
 
 <template>
   <div id="rating-cards-container">
     <div id="rating-remove-container">
-      <button type="button" class="remove-character"><img class="remove-img" src="/images/icons/no.png" alt=""></button>
+      <button type="button" class="remove-character" @click="removeCharacter"><img class="remove-img" src="/images/icons/no.png" alt=""></button>
       <form>
         <div id="clasification">
           <input id="radio1" type="radio" name="stars" value="1">
@@ -82,6 +87,10 @@ checkIfHero()
   align-items: center;
 }
 
+form {
+  align-self: flex-end;
+}
+
 #clasification{
 
   direction: rtl;
@@ -109,7 +118,7 @@ checkIfHero()
 }
 
 .remove-img {
-  height: 4vmax;
+  height: 3.5vmax;
 }
 .card {
   height: 90%;
@@ -131,6 +140,7 @@ checkIfHero()
   justify-content: center;
   align-items: center;
   height: 50%;
+  width: 100%;
   border-bottom: 2px solid black;
   text-align: center;
 }
