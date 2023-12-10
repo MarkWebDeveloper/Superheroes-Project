@@ -59,16 +59,28 @@ const removeCharacter = () => {
       </div>
 
       <div class="card-data-container">
-        <div class="character-name-container">
-          <h1 class="character-name" v-if="!character.isBeingEdited">{{ character.name }}</h1>
-          <input type="text" name="hero-name" id="hero-name-input" v-if="character.isBeingEdited" v-model="newName">
+          <div class="character-name-container">
+            <h1 class="character-name" v-if="!character.isBeingEdited">{{ character.name }}</h1>
+            <input type="text" name="hero-name" id="hero-name-input" v-if="character.isBeingEdited" v-model="newName">
+          </div>
+          <div class="character-attributes">
+            <p class="character-intelligence" v-if="!character.isBeingEdited">RACE: {{ character.race }}</p>
+            <div class="input-container" v-if="character.isBeingEdited">
+              <label for="race-input">RACE:</label>
+              <input type="text" id="race-input" class="input" v-model="newRace">
+            </div>
+            <p class="character-power" v-if="!character.isBeingEdited">INTELLIGENCE: {{ character.intelligence }}</p>
+            <div class="input-container" v-if="character.isBeingEdited">
+              <label for="intelligence-input">INTELLIGENCE:</label>
+              <input type="text" id="intelligence-input" class="input" v-model="newIntelligence">
+            </div>
+            <p class="character-speed" v-if="!character.isBeingEdited">POWER: {{ character.power }}</p>
+            <div class="input-container" v-if="character.isBeingEdited">
+              <label for="power-input">POWER:</label>
+              <input type="text" id="power-input" class="input" v-model="newPower">
+            </div>
+          </div>
         </div>
-        <div class="character-attributes">
-          <p class="character-intelligence">RACE: {{ character.race }}</p>
-          <p class="character-power">INTELLIGENCE: {{ character.intelligence }}</p>
-          <p class="character-speed">POWER: {{ character.power }}</p>
-        </div>
-      </div>
 
     </div>
   </div>
@@ -201,6 +213,15 @@ form {
   flex-direction: column;
   justify-content: center;
   padding-left: 10%
+}
+
+.input-container {
+  display: flex;
+  width: 100%;
+}
+
+.input {
+  width: 100%;
 }
 
 @media only screen and (min-width: 768px) {
