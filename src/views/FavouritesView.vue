@@ -44,22 +44,23 @@ h1 {
   padding-top: 3%;
   text-align: center;
   font-size: 30px;
-  margin-bottom: 5%;
+  margin-bottom: 10%;
 }
 
 #add-button-container {
   display: flex;
   justify-content: center;
+  margin-bottom: 10%;
 }
 
 #cards-container {
   margin: 0 auto;
   position: relative;
   width: 100%;
-  height: 85%;
+  height: 60%;
   display: grid;
   grid-template-columns: repeat(2, 45%);
-  grid-auto-rows: 31%;
+  grid-auto-rows: 49%;
   justify-content: center;
   justify-items: center;
   row-gap: 3%;
@@ -81,13 +82,14 @@ h1 {
   }
 
   h1 {
-    margin-bottom: 2%;
+    margin-bottom: 3%;
   }
 
   #add-button-container {
     display: flex;
     justify-content: flex-start;
     padding-left: 10.8%;
+    margin-bottom: 3%;
   }
 
   #title-container {
@@ -96,10 +98,10 @@ h1 {
 
   #cards-container {
     width: 80%;
-    height: 70%;
+    height: 45%;
     display: grid;
     grid-template-columns: repeat(5, 20%);
-    grid-auto-rows: 50%;
+    grid-auto-rows: 100%;
     row-gap: 6%;
     padding: 0;
   }

@@ -24,6 +24,7 @@ checkIfHero()
 <template>
   <div id="rating-cards-container">
     <div id="rating-remove-container">
+      <button type="button" class="remove-character"><img class="remove-img" src="/images/icons/no.png" alt=""></button>
       <form>
         <div id="clasification">
           <input id="radio1" type="radio" name="stars" value="1">
@@ -43,8 +44,8 @@ checkIfHero()
 
       <div class="card-photo-container">
         <img :src="character.image" class="card-img" alt="...">
-        <button class="add-character" @click="storeFav.addCharacter(character)">
-          <img src="/images/icons/add.webp" alt="add button image">
+        <button class="edit-character-button" @click="storeFav.addCharacter(character)">
+          <img src="/images/icons/edit.png" alt="add button image">
         </button>
       </div>
 
@@ -74,10 +75,11 @@ checkIfHero()
 }
 
 #rating-remove-container {
-  height: 10%;
+  height: 3vmax;
   width: 90%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 #clasification{
@@ -104,6 +106,10 @@ checkIfHero()
   input[type = "radio"]:checked ~ label{
     color:orange;
   }
+}
+
+.remove-img {
+  height: 4vmax;
 }
 .card {
   height: 90%;
@@ -134,7 +140,7 @@ checkIfHero()
   height: 12%;
 }
 
-.add-character {
+.edit-character-button {
   width: 3vmax;
   align-self: flex-start;
   margin-left: auto;
@@ -180,11 +186,11 @@ checkIfHero()
 @media only screen and (min-width: 768px) {
 
   .card-img {
-  height: 22%;
+  height: 40%;
 }
 
-  .add-character {
-  width: 2vmax;
+  .edit-character-button {
+  width: 3vmax;
   margin-right: 0.3vmax;
   margin-top: 0.3vmax;
 }
