@@ -1,19 +1,26 @@
 <script setup>
 import { useFavouriteCharactersStore } from '../../stores/FavouriteCharactersStore';
-import { useApiCharactersStore } from '../../stores/ApiCharactersStore';
+import { ref } from 'vue';
 const props = defineProps({
   character: Object,
   index: Number
 })
 
-const store = useApiCharactersStore()
 const storeFav = useFavouriteCharactersStore()
+let newName = ref(props.character.name)
+let newRace = ref(props.character.race)
+let newIntelligence = ref(props.character.intelligence)
+let newPower = ref(props.character.power)
 
 const toggleEditHero = () => {
   if (props.character.isBeingEdited == false) {
     props.character.isBeingEdited = true
   } else {
     props.character.isBeingEdited = false
+    props.character.name = newName
+    props.character.race = newRace
+    props.character.intelligence = newIntelligence
+    props.character.power = newPower
   }
 }
 
@@ -45,15 +52,16 @@ const removeCharacter = () => {
 
       <div class="card-photo-container">
         <img :src="character.image" class="card-img" alt="...">
-        <button class="edit-character-button">
-          <img src="/images/icons/edit.png" alt="edit button image" @click="toggleEditHero">
+        <button class="edit-character-button" @click="toggleEditHero">
+          <img src="/images/icons/edit.png" alt="edit button image" v-if="!character.isBeingEdited">
+          <img src="/images/icons/done-editing.png" alt="done editing button image" v-if="character.isBeingEdited">
         </button>
       </div>
 
       <div class="card-data-container">
         <div class="character-name-container">
           <h1 class="character-name" v-if="!character.isBeingEdited">{{ character.name }}</h1>
-          <input type="text" name="hero-name" id="hero-name-input" :value="character.name" v-if="character.isBeingEdited">
+          <input type="text" name="hero-name" id="hero-name-input" v-if="character.isBeingEdited" v-model="newName">
         </div>
         <div class="character-attributes">
           <p class="character-intelligence">RACE: {{ character.race }}</p>
@@ -144,7 +152,7 @@ form {
 
 .card-img {
   position: absolute;
-  height: 12%;
+  height: 18%;
 }
 
 .edit-character-button {
@@ -177,6 +185,11 @@ form {
   text-transform: uppercase;
   font-family: 'Press Start 2P', sans-serif;
   overflow: auto;
+  text-align: center;
+}
+
+#hero-name-input {
+  width: 100%;
   text-align: center;
 }
 

@@ -7,22 +7,10 @@ const props = defineProps({
 
 const store = useApiCharactersStore()
 const storeFav = useFavouriteCharactersStore()
-
-let isHero = true
-
-const checkIfHero = () => {
-  if (props.character.alignment == 'good') {
-    isHero = true
-  } else {
-    isHero = false
-  }
-}
-
-checkIfHero()
 </script>
 
 <template>
-  <div class="card" :class="{ hero: isHero, hidden: store.isHidden }">
+  <div class="card" :class="{ hero: character.alignment == 'good' }">
 
     <div class="card-photo-container">
       <img :src="character.image" class="card-img" alt="...">
