@@ -8,11 +8,41 @@ const toggleDropdown = () => {
   isDropdownOpen.value = !isDropdownOpen.value;
 };
 
+export default {
+  data() {
+    return {
+      searchRace: '', // Almacena el valor de la búsqueda por raza
+      characters: [], // Almacena los personajes filtrados
+      originalCharacters: [] // Almacena todos los personajes originales
+      // Agrega otras propiedades de datos según sea necesario
+    };
+  },
+  methods: {
+    searchByRace() {
+      if (this.searchRace.length > 0) {
+        const lowerCaseRace = this.searchRace.toLowerCase();
+
+        let result = this.originalCharacters.filter((character) => {
+          const characterRace = character.race.toLowerCase();
+
+          return characterRace.includes(lowerCaseRace);
+        });
+
+        this.characters = result;
+      } else {
+        this.characters = this.originalCharacters;
+      }
+    },
+    // Otras funciones del componente
+  },
+  // Otras opciones del componente
+};
+
 </script>
 
 <template>
 
-    <div id="dropdown-menu" @click="toggleDropdown" :class="{ 'clicked': isDropdownOpen }"> FILTER
+    <div id="dropdown-menu" v-model="searchRace"  @click="searchByRace" @click="toggleDropdown" :class="{ 'clicked': isDropdownOpen }"> FILTER
 
     <ul class="dropdown-list" v-show="isDropdownOpen">
 
