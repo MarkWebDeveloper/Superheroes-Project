@@ -1,8 +1,12 @@
 <script setup>
 import { useApiCharactersStore } from '../stores/ApiCharactersStore.js';
 import Card from '../components/general/Card.vue';
+<<<<<<< HEAD
 import SearchBarMobile from '../components/home/SearchBarMobile.vue';
 import SearchBarDesktop from '../components/home/SearchBarDesktop.vue';
+=======
+import Filter from '../components/Filter.vue'
+>>>>>>> feature/filter-button
 
 const store = useApiCharactersStore()
 
@@ -20,6 +24,7 @@ const store = useApiCharactersStore()
     <div id="inputs-container-desktop">
       <SearchBarDesktop id="searchbar-desktop" />
     </div>
+    <Filter />
     <div id="cards-container">
       <Card v-for="character in store.characters" v-if="store.isLoaded" :character="character" />
     </div>
