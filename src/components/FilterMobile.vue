@@ -12,18 +12,33 @@ const toggleDropdown = () => {
 
 <template>
 
-    <div id="dropdown-menu" @click="toggleDropdown" :class="{ 'clicked': isDropdownOpen }"> FILTER
+  <div id="dropdown-menu" @click="toggleDropdown" :class="{ 'clicked': isDropdownOpen }"> FILTER
 
-    <ul class="dropdown-list" v-show="isDropdownOpen">
+  <ul class="dropdown-list" v-show="isDropdownOpen">
 
-      <li class="item-1"> <a href="#"> HUMAN </a> </li>
-      <li class="item-2"> <a href="#"> CYBORG </a> </li>
-      <li class="item-3"> <a href="#"> ALIEN </a> </li>
-      <li class="item-4"> <a href="#"> DEMON </a> </li>
-
-    </ul>
-
+    <div id="item-1">
+    <input type="checkbox" id="item-1" name="human" />
+    <label> <a href="#"> HUMAN </a> </label>
     </div>
+
+    <div id="item-2">
+    <input type="checkbox" id="item-2" name="cyborg" />
+    <label> <a href="#"> CYBORG </a> </label>
+    </div>
+
+    <div id="item-3">
+    <input type="checkbox" id="item-3" name="alien" />
+    <label> <a href="#"> ALIEN </a> </label>
+    </div>
+
+    <div id="item-4">
+    <input type="checkbox" id="item-4" name="demon" />
+    <label> <a href="#"> DEMON </a> </label>
+    </div>
+
+  </ul>
+
+  </div>
 
 </template>
 
@@ -55,13 +70,14 @@ const toggleDropdown = () => {
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 
   z-index: 99;
-  top: -410%;
+  top: -199%;
   width: 90%;
 }
 
-.dropdown-list li {
-  padding: 10px;
-  text-align: left;
+.dropdown-list ul {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
   border: 1px solid black;
 }
 
