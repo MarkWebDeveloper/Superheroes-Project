@@ -61,7 +61,7 @@ function redirectToFavourites() {
                     <div class="input-box">
                         <input type="password" name="password" id="password" placeholder="Password" class="input-control" v-model="password">
                         <div class="input-link">
-                            <button type="button" class="gradient-text" @click="store2.showForm()">REGISTER HERE</button>
+                            <button type="button" class="gradient-text" id="register-button" @click="store2.showForm()">REGISTER HERE</button>
                         </div>
                     </div>
                 <button type="submit" class="btn">SIGN IN</button>
@@ -150,5 +150,15 @@ button{
     margin-top: 20%;
 
 } 
+
+.input-link {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#register-button {
+    margin: 0;
+}
 
 </style>
