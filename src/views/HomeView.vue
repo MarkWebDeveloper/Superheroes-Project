@@ -1,12 +1,9 @@
 <script setup>
 import { useApiCharactersStore } from '../stores/ApiCharactersStore.js';
 import Card from '../components/general/Card.vue';
-<<<<<<< HEAD
 import SearchBarMobile from '../components/home/SearchBarMobile.vue';
 import SearchBarDesktop from '../components/home/SearchBarDesktop.vue';
-=======
 import Filter from '../components/Filter.vue'
->>>>>>> feature/filter-button
 
 const store = useApiCharactersStore()
 
