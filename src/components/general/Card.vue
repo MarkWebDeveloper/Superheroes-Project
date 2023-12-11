@@ -48,8 +48,6 @@ const storeFav = useFavouriteCharactersStore()
     background: url(/images/background/stellar.gif);
   }
   color: gold;
-  filter:saturate(180%);
- 
 }
 
 .hero {
