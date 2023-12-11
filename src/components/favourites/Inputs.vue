@@ -1,10 +1,15 @@
 <script setup>
+import { ref } from 'vue'
+import { useNewCharacterStore } from '../../stores/NewCharacterStore';
 
+const newCharStore = useNewCharacterStore
+
+let newName = ref(newCharStore.characterName)
 </script>
 
 <template>
     <label id="name-label" for="name-input">NAME</label>
-    <input type="text" name="name" id="name-input" autocomplete="Unknown">
+    <input type="text" name="name" id="name-input" autocomplete="Unknown" v-model="newCharStore.characterName">
     <label id="name-label" for="race-input">RACE</label>
     <input type="text" name="race" id="race-input" autocomplete="Unknown">
     <label id="name-label" for="intelligence-input">INTELLIGENCE</label>

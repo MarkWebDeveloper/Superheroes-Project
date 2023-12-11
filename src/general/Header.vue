@@ -83,14 +83,4 @@ const isLoggedIn = ref(false)
         }
     }
 
-    @media only screen and (min-width: 768px) {
-
-        #headerContainer {
-
-            img {
-                width: 15%;
-            }
-        }
-    }
-
 </style>
