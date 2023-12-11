@@ -1,12 +1,12 @@
 <script setup>
 import AddHero from '../components/favourites/AddHero.vue'
 
-import { useApiCharactersStore } from '../stores/ApiCharactersStore.js';
-//import { useFavouriteCharactersStore } from '../stores/FavouriteCharactersStore.js';
+// import { useApiCharactersStore } from '../stores/ApiCharactersStore.js';
+import { useFavouriteCharactersStore } from '../stores/FavouriteCharactersStore.js';
 import Card from '../components/general/Card.vue';
 
-const store = useApiCharactersStore()
-//const store = useFavouriteCharactersStore();
+// const store = useApiCharactersStore()
+const store = useFavouriteCharactersStore();
 </script>
 
 <template>
@@ -34,7 +34,7 @@ const store = useApiCharactersStore()
                 <label for="radio5">★</label>
             </p>
         </form>
-        <Card v-for="character in store.characters" v-if="store.isLoaded" :character="character" />
+        <Card v-for="character in store.favouriteCharacters" v-if="store.isLoaded" :character="character" />
         </div>
    </div>
     <!-- <AddHero /> -->

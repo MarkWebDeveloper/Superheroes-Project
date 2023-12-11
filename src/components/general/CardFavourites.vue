@@ -4,7 +4,17 @@ const props = defineProps({
   character: Object
 })
 
-const store = useFavouriteCharactersStore() 
+const store = useFavouriteCharactersStore()
+
+let isHero = true
+
+const checkIfHero = () => {
+  if (props.character.alignment == 'good') {
+    isHero = true
+  } else {
+    isHero = false
+  }
+}
 
 checkIfHero()
 </script>
