@@ -39,6 +39,17 @@ const storeFav = useFavouriteCharactersStore()
   width: 90%;
   border-radius: 10px;
   background-color: #EE5454;
+  transition: 300ms;
+ 
+  
+}
+.card:hover {
+  .card-photo-container{
+    background: url(/images/background/stellar.gif);
+  }
+  color: gold;
+  filter:saturate(180%);
+ 
 }
 
 .hero {
@@ -56,7 +67,11 @@ const storeFav = useFavouriteCharactersStore()
   height: 50%;
   border-bottom: 2px solid black;
   text-align: center;
+  border-radius: 5px;
+  
 }
+
+
 
 .card-img {
   position: absolute;
@@ -68,9 +83,15 @@ const storeFav = useFavouriteCharactersStore()
   align-self: flex-start;
   margin-left: auto;
   margin-right: 1vmax;
-  margin-top: 1vmax;
+  margin-top: 1vmax; 
+  transition: 300ms;
+  background-color: gold;
+  border-radius: 6px;
 }
+.add-character:hover{
+  transform:scale(1.1);
 
+}
 .card-data-container {
   width: 100%;
   height: 50%;
@@ -110,6 +131,7 @@ const storeFav = useFavouriteCharactersStore()
 
   .card-img {
   height: 22%;
+  border-radius: 5px;
 }
 
   .add-character {
