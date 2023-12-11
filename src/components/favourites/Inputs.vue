@@ -3,19 +3,17 @@ import { ref } from 'vue'
 import { useNewCharacterStore } from '../../stores/NewCharacterStore';
 
 const newCharStore = useNewCharacterStore
-
-let newName = ref(newCharStore.characterName)
 </script>
 
 <template>
     <label id="name-label" for="name-input">NAME</label>
     <input type="text" name="name" id="name-input" autocomplete="Unknown" v-model="newCharStore.characterName">
     <label id="name-label" for="race-input">RACE</label>
-    <input type="text" name="race" id="race-input" autocomplete="Unknown">
+    <input type="text" name="race" id="race-input" autocomplete="Unknown" v-model="newCharStore.characterRace">
     <label id="name-label" for="intelligence-input">INTELLIGENCE</label>
-    <input type="text" name="name" id="intelligence-input" autocomplete="Unknown">
+    <input type="text" name="name" id="intelligence-input" autocomplete="Unknown" v-model="newCharStore.characterIntelligence">
     <label id="name-label" for="power-input">POWER</label>
-    <input type="text" name="name" id="power-input" autocomplete="Unknown">
+    <input type="text" name="name" id="power-input" autocomplete="Unknown" v-model="newCharStore.characterPower">
 </template>
 
 <style lang="scss" scoped>

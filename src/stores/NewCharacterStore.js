@@ -6,10 +6,12 @@ export const useNewCharacterStore = defineStore('newCharacter', () => {
   let characterRace = ref('')
   let characterIntelligence = ref('')
   let characterPower = ref('')
+  let isHero = ref(Boolean)
+  let isVillain = ref(Boolean)
 
   function increment() {
     count.value++
   }
 
-  return { characterName, characterRace, characterIntelligence, characterPower }
+  return { characterName, characterRace, characterIntelligence, characterPower, isHero, isVillain}
 })
