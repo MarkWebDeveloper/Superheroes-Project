@@ -1,10 +1,37 @@
 <script setup>
+import { useNewCharacterStore } from '../../stores/NewCharacterStore';
 
+const newCharStore = useNewCharacterStore()
+
+// let image = null
+
+function doSomething(e) { 
+  let image = e.target.files[0]
+  let reader = new FileReader(); 
+  reader.readAsDataURL(image);
+  console.log(reader)
+}
+
+// imgData = createBase64Image(img);
+// localStorage.setItem("imgData", imgData);
+
+function createBase64Image(img) {
+    var canvas = document.createElement("canvas");
+    canvas.width = img.width;
+    canvas.height = img.height;
+    var ctx = canvas.getContext("2d");
+    ctx.drawImage(img, 0, 0);
+    var dataURL = canvas.toDataURL("image/png");
+    return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+}
 </script>
 
 <template>
     <form action="submit">
-        <button id="upload-photo" type="button">UPLOAD PHOTO</button>
+        <label for="upload-file" id="upload-photo">UPLOAD PHOTO
+            <input type="file" ref="file" id="upload-file" accept="image/gif, 
+    image/jpeg, image/png" hidden @change="doSomething" />
+        </label>
     </form>
 </template>
 

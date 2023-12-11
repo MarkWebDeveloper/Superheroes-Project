@@ -3,7 +3,7 @@ import { useNewCharacterStore } from '../../stores/NewCharacterStore';
 
 const newCharStore = useNewCharacterStore
     function create() {
-        console.log(newCharStore.characterName)
+        console.log(newCharStore.characterAlignment)
     }
 </script>
 

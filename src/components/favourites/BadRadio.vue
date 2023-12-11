@@ -1,10 +1,12 @@
 <script setup>
+import { useNewCharacterStore } from '../../stores/NewCharacterStore';
 
+const newCharStore = useNewCharacterStore
 </script>
 
 <template>
-    <label class="container">BAD
-        <input type="radio" name="good-or-bad">
+    <label class="container" for="bad-radio">BAD
+        <input type="radio" id="bad-radio" value="Bad" name="good-or-bad" v-model="newCharStore.characterAlignment">
     </label>
 </template>
 
