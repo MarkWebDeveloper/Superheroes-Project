@@ -34,7 +34,6 @@ div {
     height: 5vh;
     background-color: black;
     margin-left: 10.8%;
-    margin-bottom: 2%;
     display: flex;
     justify-content: space-between;
 }

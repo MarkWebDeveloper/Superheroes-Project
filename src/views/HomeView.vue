@@ -3,7 +3,8 @@ import { useApiCharactersStore } from '../stores/ApiCharactersStore.js';
 import Card from '../components/general/Card.vue';
 import SearchBarMobile from '../components/home/SearchBarMobile.vue';
 import SearchBarDesktop from '../components/home/SearchBarDesktop.vue';
-import Filter from '../components/Filter.vue'
+import FilterMobile from '../components/FilterMobile.vue';
+import FilterDesktop from '../components/FilterDesktop.vue';
 
 const store = useApiCharactersStore()
 
@@ -20,13 +21,14 @@ const store = useApiCharactersStore()
     </div>
     <div id="inputs-container-desktop">
       <SearchBarDesktop id="searchbar-desktop" />
+      <FilterDesktop />
     </div>
-    <Filter />
     <div id="cards-container">
       <Card v-for="character in store.characters" v-if="store.isLoaded" :character="character" />
     </div>
     <div id="inputs-container-mobile">
       <SearchBarMobile id="searchbar-mobile" />
+      <FilterMobile />
     </div>
   </main>
 </template>
