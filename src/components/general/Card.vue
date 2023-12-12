@@ -40,14 +40,17 @@ const storeFav = useFavouriteCharactersStore()
   border-radius: 10px;
   background-color: #EE5454;
   transition: 300ms;
- 
-  
 }
 .card:hover {
   .card-photo-container{
     background: url(/images/background/stellar.gif);
+    background-position: fixed;
   }
-  color: gold;
+  .card-img {
+    filter: brightness(120%);
+    filter: contrast(120%);
+}
+  color: rgb(255, 225, 56);
 }
 
 .hero {
@@ -65,7 +68,7 @@ const storeFav = useFavouriteCharactersStore()
   height: 50%;
   border-bottom: 2px solid black;
   text-align: center;
-  border-radius: 5px;
+  border-radius: 10px;
   
 }
 
@@ -83,12 +86,12 @@ const storeFav = useFavouriteCharactersStore()
   margin-right: 1vmax;
   margin-top: 1vmax; 
   transition: 300ms;
-  background-color: gold;
-  border-radius: 6px;
+  background-color: whitesmoke;
+  border-radius: 7px;
 }
 .add-character:hover{
   transform:scale(1.1);
-
+  background-color: gold;
 }
 .card-data-container {
   width: 100%;
