@@ -19,12 +19,9 @@ const toggleDropdown = () => {
       let result = store.characters.filter((character) => selectedRaces.includes(character.race));
       console.log(result)
       store.characters = result
-      // store.commit('updateCharacters', result);
     } else {
       store.characters = []
       store.characters = store.originalCharacters
-      // store.commit('updateCharacters', []);
-      // store.commit('updateCharacters', store.originalCharacters);
     }
   } 
 </script>
