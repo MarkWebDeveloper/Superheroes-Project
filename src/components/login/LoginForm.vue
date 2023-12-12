@@ -23,7 +23,7 @@ function login(){
             store.users[index].isAuthenticated = true
             redirectToFavourites()
         } else {
-            alert("This user is not registered")
+            alert("Incorrect email or password")
         }
     }
 }
@@ -42,7 +42,7 @@ function redirectToFavourites() {
             <div class="box">
                 <h2>LOGIN SESSION</h2>
                 
-                <form @submit.prevent="login(), store.login()">
+                <form @submit.prevent="login(), store.changeLoggedState()">
                     <div class="input-box">
                         <input type="email"  name="email"  id="email" placeholder="Email" class="input-control" v-model="email">
 

@@ -4,13 +4,9 @@ import Popup from '../components/favourites/Popup.vue';
 import CardFavourites from '../components/general/CardFavourites.vue';
 import { useApiCharactersStore } from '../stores/ApiCharactersStore';
 import { useFavouriteCharactersStore } from '../stores/FavouriteCharactersStore';
-import { useAuthStore } from '../stores/user';
 
 const store = useApiCharactersStore()
 const storeFav = useFavouriteCharactersStore()
-const storeAuth = useAuthStore()
-
-storeAuth.login ()
 storeFav.addEditingAttribute()
 
 </script>

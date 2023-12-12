@@ -30,7 +30,7 @@ function login(){
         <div class="headerLinkLogged" v-if="store.isLoggedIn">
             <RouterLink class="routerLink" to="/">HOME</RouterLink>
             <RouterLink class="routerLink" to="/favourites">FAVORITES</RouterLink>
-            <RouterLink class="routerLink" to="/login">LOG OUT</RouterLink>
+            <RouterLink class="routerLink" to="/" @click="store.logout()">LOG OUT</RouterLink>
         </div>
 
         <div class="headerLink" v-else>
