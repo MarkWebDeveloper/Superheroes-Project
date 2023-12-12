@@ -57,8 +57,8 @@ const removeCharacter = () => {
       <div class="card-photo-container">
         <img :src="character.image" class="card-img" alt="...">
         <button class="edit-character-button" @click="toggleEditHero">
-          <img src="/images/icons/edit.png" alt="edit button image" v-if="!character.isBeingEdited">
-          <img src="/images/icons/done-editing.png" alt="done editing button image" v-if="character.isBeingEdited">
+          <img src="/images/icons/edit-white.png" alt="edit button image" v-if="!character.isBeingEdited">
+          <img src="/images/icons/done-editing-white.png" alt="done editing button image" v-if="character.isBeingEdited">
         </button>
       </div>
 
@@ -113,24 +113,28 @@ form {
 }
 
 #clasification{
-
   direction: rtl;
   unicode-bidi: bidi-override;
   
+  
   label{ 
     color:grey;
+    transform:scale(1.1);
   }
   
   input[type = "radio"]{
      display:none;
+     
   };
 
   label:hover{
     color:orange;
+    
   }
   
   label:hover ~ label{
     color:orange;
+    
   }
 
   input[type = "radio"]:checked ~ label{
@@ -140,6 +144,10 @@ form {
 
 .remove-img {
   height: 3.5vmax;
+  transition: 300ms;
+}
+.remove-img:hover{
+    transform:scale(1.1);
 }
 .card {
   height: 90%;
@@ -148,6 +156,14 @@ form {
   background-color: #EE5454;
 }
 
+.card:hover {
+ 
+  .card-img {
+    filter: brightness(120%);
+    filter: contrast(120%);
+}
+  color: rgb(255, 225, 56);
+}
 .hero {
   background-color: #5492EE;
 }
@@ -164,8 +180,13 @@ form {
   width: 100%;
   border-bottom: 2px solid black;
   text-align: center;
+  background: url(/images/background/stellar.gif);
+  background-position: fixed;
+  
 }
-
+.card-photo-container{
+    border-radius: 10px;
+  }
 .card-img {
   position: absolute;
   height: 18%;
@@ -177,8 +198,11 @@ form {
   margin-left: auto;
   margin-right: 1vmax;
   margin-top: 1vmax;
+  transition: 300ms;
 }
-
+.edit-character-button:hover{
+ transform:scale(1.1);
+}
 .card-data-container {
   width: 100%;
   height: 50%;
