@@ -9,7 +9,8 @@ function doSomething(e) {
   let image = e.target.files[0]
   let reader = new FileReader(); 
   reader.readAsDataURL(image);
-  console.log(reader)
+  newCharStore.characterImage = reader
+  console.log(newCharStore.characterImage)
 }
 
 // imgData = createBase64Image(img);
