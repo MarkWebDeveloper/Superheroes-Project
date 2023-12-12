@@ -9,7 +9,7 @@ export const useAuthStore = defineStore('user', () => {
         {
             name: '',
             username: 'admin@gmail.com',
-            password: 'myPassword',
+            password: '1234',
             isAuthenticated: false
         }
     ]);

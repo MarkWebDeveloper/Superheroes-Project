@@ -16,23 +16,14 @@ const router = useRouter()
 const email = ref ('')
 const password = ref ('')
 
-
-
-
-/* function login(){
-    if (username.value == store.users.email && password.value == store.users.password) {
-        store.user.isAuthenticated = true
-}
-
-} */
-
 function login(){
-    // let introducedUser = store.users.filter((user) => user.username == email.value && user.password == password.value)
-    // store.users.
 
     for (let index = 0; index < store.users.length; index++) {
         if (store.users[index].username == email.value && store.users[index].password == password.value) {
             store.users[index].isAuthenticated = true
+            redirectToFavourites()
+        } else {
+            alert("This user is not registered")
         }
     }
 }
@@ -41,8 +32,6 @@ function redirectToFavourites() {
     const redirectPath = route.query.redirect || '/favourites'
     router.push(redirectPath) 
 }
-
-
 
 </script>
 
@@ -53,7 +42,7 @@ function redirectToFavourites() {
             <div class="box">
                 <h2>LOGIN SESSION</h2>
                 
-                <form @submit.prevent="login(), store.login(), redirectToFavourites()">
+                <form @submit.prevent="login(), store.login()">
                     <div class="input-box">
                         <input type="email"  name="email"  id="email" placeholder="Email" class="input-control" v-model="email">
 

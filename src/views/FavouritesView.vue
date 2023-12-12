@@ -11,7 +11,6 @@ const storeFav = useFavouriteCharactersStore()
 const storeAuth = useAuthStore()
 
 storeAuth.login ()
-console.log (store.isLoggedIn)
 storeFav.addEditingAttribute()
 
 </script>

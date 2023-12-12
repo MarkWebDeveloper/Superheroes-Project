@@ -87,7 +87,7 @@ const storeFav = useFavouriteCharactersStore()
   margin-top: 1vmax; 
   transition: 300ms;
   background-color: whitesmoke;
-  border-radius: 7px;
+  border-radius: 10px;
 }
 .add-character:hover{
   transform:scale(1.1);
