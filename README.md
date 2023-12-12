@@ -1,3 +1,15 @@
+
+# Welcome to heroes and villains!
+
+We have developed an innovative application that gives users the possibility to explore fascinating cards with images and character attributes, covering both heroes and villains from various sagas. The app allows users to filter cards based on categories such as humans, Cyrborg, aliens, and demons, making it easier to search for characters based on specific preferences. Each card features a button to add the character of choice, redirecting users to an exclusive "Favorites" section. To access this area, a login process is required, ensuring privacy and personalization of the experience. On the "Favorites" page, users can view and manage cards for selected characters, giving them the ability to modify names and attributes, or even add more characters to their custom collection. This interactive and personalized approach offers users a unique and complete experience in exploring and managing their favorite characters.
+
+# FINAL RESULT
+
+
+
+
+
+
 # Superheroes Group Project
 
 This is a group project of a superheroes and villains webpage. This page uses a superheroes API to access the heroes photos, stats and bio.
@@ -51,3 +63,13 @@ npm run build
 ```sh
 npm run test:unit
 ```
+
+
+## TEAM
+
+- [Veronica Sampedro] (https://github.com/verosampedro)
+- [Mark Kil] (https://github.com/MarkWebDeveloper)
+- [Daniel Gallo] (https://github.com/DanielGallo84)
+- [Brusmel Gil] (https://github.com/BrusmelGil)
+
+
