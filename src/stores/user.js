@@ -22,7 +22,7 @@ function login(){
     
     for (let index = 0; index < users.length; index++) {
         if (users[index].isAuthenticated == true)  {
-            isLoggedIn = true
+            this.isLoggedIn = true
         }
     }
 }

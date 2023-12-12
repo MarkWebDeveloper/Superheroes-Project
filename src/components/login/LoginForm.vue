@@ -53,7 +53,7 @@ function redirectToFavourites() {
             <div class="box">
                 <h2>LOGIN SESSION</h2>
                 
-                <form @submit.prevent="login, redirectToFavourites()">
+                <form @submit.prevent="login(), store.login(), redirectToFavourites()">
                     <div class="input-box">
                         <input type="email"  name="email"  id="email" placeholder="Email" class="input-control" v-model="email">
 
