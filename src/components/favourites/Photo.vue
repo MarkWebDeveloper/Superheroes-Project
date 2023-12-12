@@ -18,4 +18,10 @@
     margin-bottom: 10%;
 }
 
+@media only screen and (min-width: 768px) {
+    #photo-div {
+    margin-bottom: 2%;
+}
+}
+
 </style>

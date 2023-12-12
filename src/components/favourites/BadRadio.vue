@@ -24,4 +24,14 @@ input[type='radio'] {
      transform: scale(2); 
  }
 
+ @media only screen and (min-width: 768px) {
+    label {
+        font-size: 1vmax;
+    }
+
+    input[type='radio'] {
+        transform: scale(1.5);
+    }
+}
+
 </style>

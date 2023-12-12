@@ -7,7 +7,8 @@ newCharStore.characterAlignment = 'Good'
 
 <template>
     <label class="container" for="good-radio">GOOD
-        <input type="radio" id="good-radio" value="Good" name="good-or-bad" checked v-model="newCharStore.characterAlignment">
+        <input type="radio" id="good-radio" value="Good" name="good-or-bad" checked
+            v-model="newCharStore.characterAlignment">
     </label>
 </template>
 
@@ -20,8 +21,17 @@ label {
     cursor: pointer;
 }
 
-input[type='radio'] { 
-     transform: scale(2); 
- }
+input[type='radio'] {
+    transform: scale(2);
+}
 
+@media only screen and (min-width: 768px) {
+    label {
+        font-size: 1vmax;
+    }
+
+    input[type='radio'] {
+        transform: scale(1.5);
+    }
+}
 </style>

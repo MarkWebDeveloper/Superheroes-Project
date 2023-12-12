@@ -26,7 +26,7 @@ const storeFav = useFavouriteCharactersStore()
 
 #popup {
     position: absolute;
-    width: 100vw;
+    width: 100%;
     height: 90vh;
     background-color: #1A1A1A;
     z-index: 99;
@@ -59,4 +59,9 @@ form {
     align-items: center;
 }
 
+@media only screen and (min-width: 768px) {
+    #title {
+    margin-bottom: 2%;
+}
+}
 </style>

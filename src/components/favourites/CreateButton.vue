@@ -23,4 +23,14 @@ const newCharStore = useNewCharacterStore
         border-radius: 10px;
         position: absolute;
     }
+
+    @media only screen and (min-width: 768px) {
+        button {
+        
+        font-size: 1.5vmax;
+        padding: 0.5vmax;
+        width: 12%;
+        border-radius: 10px;
+    }
+}
 </style>

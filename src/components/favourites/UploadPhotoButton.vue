@@ -38,4 +38,12 @@ function doSomething(e) {
     margin-bottom: 10%;
 }
 
+@media only screen and (min-width: 768px) {
+    #upload-photo {
+    padding: 0.5%;
+    border-radius: 10px;
+    margin-bottom: 2%;
+}
+}
+
 </style>
