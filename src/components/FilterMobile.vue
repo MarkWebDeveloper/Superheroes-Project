@@ -1,6 +1,8 @@
 <script setup>
 
 import { ref } from 'vue';
+import { useApiCharactersStore } from '../stores/ApiCharactersStore';
+const store = useApiCharactersStore
 
 const isDropdownOpen = ref(false);
 
@@ -8,6 +10,19 @@ const toggleDropdown = () => {
   isDropdownOpen.value = !isDropdownOpen.value;
 };
 
+  function filterCharactersByRace() {
+    const selectedRaces = Array.from(document.querySelectorAll('.dropdown-list input:checked')).map(checkbox => checkbox.name.toLowerCase());
+
+    console.log (selectedRaces);
+
+    if (selectedRaces.length > 0) {
+      let result = store.originalCharacters.filter((character) => selectedRaces.includes(character.race));
+      store.commit('updateCharacters', result);
+    } else {
+      store.commit('updateCharacters', []);
+      store.commit('updateCharacters', store.originalCharacters);
+    }
+  } 
 </script>
 
 <template>
@@ -17,22 +32,22 @@ const toggleDropdown = () => {
   <ul class="dropdown-list" v-show="isDropdownOpen">
 
     <div id="item-1">
-    <input type="checkbox" id="item-1" name="human" />
+    <input type="checkbox" id="item-1" name="human" value="Human" @click="filterCharactersByRace" />
     <label> <a href="#"> HUMAN </a> </label>
     </div>
 
     <div id="item-2">
-    <input type="checkbox" id="item-2" name="cyborg" />
+    <input type="checkbox" id="item-2" name="cyborg" value="Cyborg" @click="filterCharactersByRace" />
     <label> <a href="#"> CYBORG </a> </label>
     </div>
 
     <div id="item-3">
-    <input type="checkbox" id="item-3" name="alien" />
+    <input type="checkbox" id="item-3" name="alien" value="Alien" @click="filterCharactersByRace" />
     <label> <a href="#"> ALIEN </a> </label>
     </div>
 
     <div id="item-4">
-    <input type="checkbox" id="item-4" name="demon" />
+    <input type="checkbox" id="item-4" name="demon" value="Demon" @click="filterCharactersByRace" />
     <label> <a href="#"> DEMON </a> </label>
     </div>
 
