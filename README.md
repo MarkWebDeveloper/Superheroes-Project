@@ -2,6 +2,11 @@
 
 This is a group project of a superheroes and villains webpage. This page uses a superheroes API to access the heroes photos, stats and bio.
 
+## Fonts 
+
+font-family: 'Press Start 2P'
+font-family: 'Space Grotesk', serif;
+
 ## Database link
 
 https://akabab.github.io/superhero-api/api/#alljson
