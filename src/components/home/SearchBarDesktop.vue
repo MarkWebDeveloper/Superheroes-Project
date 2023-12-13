@@ -33,7 +33,7 @@ div {
     width: 35vw;
     height: 5vh;
     background-color: black;
-    margin-left: 10.8%;
+    margin-right: 15%;
     display: flex;
     justify-content: space-between;
 }
