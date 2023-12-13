@@ -87,7 +87,20 @@ function login(){
         }
 
         img {
-            height: 100%;
+            height: 90%;
+        }
+    }
+    @media only screen and (min-width: 768px){
+        #headerContainer{
+            img{
+                margin-left: 3%;
+            }
+            .headerLink{
+                margin-right: 3%;
+            }
+            .headerLinkLogged{
+                margin-right: 3%;
+            }
         }
     }
 

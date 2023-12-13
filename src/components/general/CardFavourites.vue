@@ -190,6 +190,7 @@ form {
 .card-img {
   position: absolute;
   height: 18%;
+  border-radius: 5px;
 }
 
 .edit-character-button {
