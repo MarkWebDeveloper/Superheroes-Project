@@ -57,7 +57,7 @@ function login(){
         display: flex;
         justify-content: space-between;
         flex-direction: row;
-        align-content: center;
+        align-items: center;
 
         font-family: 'Space Grotesk', serif;
         color: white;

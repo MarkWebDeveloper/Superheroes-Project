@@ -30,12 +30,13 @@ function searchCharacters(name){
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Space+Grotesk&display=swap');
 
 div {
-    width: 35vw;
+    width: 20vw;
     height: 5vh;
     background-color: black;
-    margin-right: 15%;
+    margin-right: 30%;
     display: flex;
     justify-content: space-between;
+    border-radius: 10px;
 }
 
 input {
