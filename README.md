@@ -53,7 +53,6 @@ Images and sections:
 font-family: 'Press Start 2P'
 font-family: 'Space Grotesk', serif;
 
-<<<<<<< HEAD
 ### DEV DEPENDENCIES
 
 - Vue [https://vuejs.org/]
@@ -66,8 +65,6 @@ npm create vue@latest
 npm install
 
 
-=======
->>>>>>> 7e659e45375676d12a63fe6f777244089e81adca
 ## Database link
 
 https://akabab.github.io/superhero-api/api/#alljson
