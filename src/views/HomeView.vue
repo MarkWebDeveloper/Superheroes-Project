@@ -82,6 +82,13 @@ main {
   height: 5%;
 }
 
+#inputs-container-desktop {
+  display: flex;
+  justify-content: center;
+  gap: 18%;
+  margin-bottom: 1rem;
+}
+
 @media only screen and (min-width: 768px) {
   main {
     height: 85vh;

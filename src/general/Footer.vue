@@ -10,9 +10,9 @@
 
         <div class="rrss">
 
-            <img src="/images/icons/instagram.png" alt="">
-            <img src="/images/icons/twitter.png" alt="">
-            <img src="/images/icons/facebook.png" alt="">
+            <a href="https://www.instagram.com/" target="_blank"><img src="/images/icons/instagram-white.png" alt="Instagram"></a>
+            <a href="https://twitter.com/?lang=es" target="_blank"><img src="/images/icons/twitterx-white.png" alt="Twitter"></a>
+            <a href="https://www.facebook.com/?locale=es_ES" target="_blank"><img src="/images/icons/facebook-white.png" alt="Facebook"></a>
 
         </div>
     </footer>
@@ -34,25 +34,29 @@
         background-color: black;
         height: 5vh;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
 
         .rrss {
             display: flex;
-            justify-content: flex-end;
-            margin-right: 5px;
+            justify-content:flex-end;
+            margin-right: 3%;
 
-            img {
-                width: 3%;
+            a {
+                width: 7%;
                 padding: 9px;
+                transition: 300ms;
             }
         }
+            a:hover{
+                transform: scale(1.2);
+            }
 
         p {
             color: white;
-            font-size: 20px;
-            margin-left: 10px;
-            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            margin-left: 3%;
+            font-family:'Space Grotesk', serif;;
         }
     }
 }

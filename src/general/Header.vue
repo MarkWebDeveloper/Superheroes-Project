@@ -1,14 +1,22 @@
 <script setup>
 
 import { ref } from "vue";
+import { useAuthStore } from "../stores/user";
+const store = useAuthStore();
 
 
 const isLoggedIn = ref(false)
 
-/* const user =  reactive({
-    username: 'Vero',
-    isLoggedIn: true
-}) */
+function login(){
+    // let introducedUser = store.users.filter((user) => user.username == email.value && user.password == password.value)
+    // store.users.
+
+    for (let index = 0; index < store.users.length; index++) {
+        if (store.users[index].isAuthenticated == true)  {
+            isLoggedIn = true
+        }
+    }
+}
 
 </script>
     
@@ -19,10 +27,10 @@ const isLoggedIn = ref(false)
 
         <img src="/images/logo/logo-superheroes.png" alt="">
 
-        <div class="headerLinkLogged" v-if="isLoggedIn">
+        <div class="headerLinkLogged" v-if="store.isLoggedIn">
             <RouterLink class="routerLink" to="/">HOME</RouterLink>
             <RouterLink class="routerLink" to="/favourites">FAVORITES</RouterLink>
-            <RouterLink class="routerLink" to="/login">LOG OUT</RouterLink>
+            <RouterLink class="routerLink" to="/" @click="store.logout()">LOG OUT</RouterLink>
         </div>
 
         <div class="headerLink" v-else>
@@ -79,16 +87,19 @@ const isLoggedIn = ref(false)
         }
 
         img {
-            height: 100%;
+            height: 90%;
         }
     }
-
-    @media only screen and (min-width: 768px) {
-
-        #headerContainer {
-
-            img {
-                width: 15%;
+    @media only screen and (min-width: 768px){
+        #headerContainer{
+            img{
+                margin-left: 3%;
+            }
+            .headerLink{
+                margin-right: 3%;
+            }
+            .headerLinkLogged{
+                margin-right: 3%;
             }
         }
     }

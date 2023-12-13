@@ -17,4 +17,11 @@ const storeFav = useFavouriteCharactersStore()
 #close-img {
     height: 100%;
 }
+
+@media only screen and (min-width: 768px) {
+    #close-button {
+        height: 2vmax;
+        margin: 1.5%;
+    }
+}
 </style>

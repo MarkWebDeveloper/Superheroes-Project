@@ -16,23 +16,14 @@ const router = useRouter()
 const email = ref ('')
 const password = ref ('')
 
-
-
-
-/* function login(){
-    if (username.value == store.users.email && password.value == store.users.password) {
-        store.user.isAuthenticated = true
-}
-
-} */
-
 function login(){
-    // let introducedUser = store.users.filter((user) => user.username == email.value && user.password == password.value)
-    // store.users.
 
     for (let index = 0; index < store.users.length; index++) {
         if (store.users[index].username == email.value && store.users[index].password == password.value) {
             store.users[index].isAuthenticated = true
+            redirectToFavourites()
+        } else {
+            alert("Incorrect email or password")
         }
     }
 }
@@ -41,8 +32,6 @@ function redirectToFavourites() {
     const redirectPath = route.query.redirect || '/favourites'
     router.push(redirectPath) 
 }
-
-
 
 </script>
 
@@ -53,7 +42,7 @@ function redirectToFavourites() {
             <div class="box">
                 <h2>LOGIN SESSION</h2>
                 
-                <form @submit.prevent="login, redirectToFavourites()">
+                <form @submit.prevent="login(), store.changeLoggedState()">
                     <div class="input-box">
                         <input type="email"  name="email"  id="email" placeholder="Email" class="input-control" v-model="email">
 
@@ -61,7 +50,7 @@ function redirectToFavourites() {
                     <div class="input-box">
                         <input type="password" name="password" id="password" placeholder="Password" class="input-control" v-model="password">
                         <div class="input-link">
-                            <button type="button" class="gradient-text" @click="store2.showForm()">REGISTER HERE</button>
+                            <button type="button" class="gradient-text" id="register-button" @click="store2.showForm()">REGISTER HERE</button>
                         </div>
                     </div>
                 <button type="submit" class="btn">SIGN IN</button>
@@ -150,5 +139,15 @@ button{
     margin-top: 20%;
 
 } 
+
+.input-link {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#register-button {
+    margin: 0;
+}
 
 </style>

@@ -1,7 +1,6 @@
 <script setup>
 
 import { ref } from "vue";
-import { useShowHideForm } from '../../stores/showForm.js';
 import { useAuthStore } from '@/stores/user.js';
 import { useRoute, useRouter } from "vue-router";
 
@@ -13,8 +12,6 @@ const router = useRouter()
 let name = ref('')
 let email = ref ('')
 let password = ref ('')
-
-const store2 = useShowHideForm()
 
 let newUser = {
     name: '',
@@ -45,7 +42,7 @@ function redirectToFavourites() {
         <div class="form-content">
             <div class="box">
                 <h2>SIGN UP</h2>
-                <form @submit.prevent="fillUser(name, email, password), store.addUser(newUser), redirectToFavourites()">
+                <form @submit.prevent="fillUser(name, email, password), store.addUser(newUser), store.changeLoggedState(), redirectToFavourites()">
 
                     <div>
                         <input type="tex"  name="name" placeholder="Name" class="input-control" v-model="name">
