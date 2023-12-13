@@ -11,7 +11,7 @@ function pushNewToFavourites() {
 </script>
 
 <template>
-    <button type="button" @click="store.createNewCharacter(), pushNewToFavourites()">CREATE</button>
+    <button type="button" @click="store.createNewCharacter(), pushNewToFavourites(), storeFav.openClosePopup()">CREATE</button>
 </template>
 
 <style lang="scss" scoped>

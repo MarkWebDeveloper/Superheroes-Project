@@ -1,5 +1,4 @@
 <script setup>
-import { reactive, ref } from 'vue';
 import { useApiCharactersStore } from '../../stores/ApiCharactersStore';
 
 const store = useApiCharactersStore()
@@ -9,7 +8,7 @@ function searchCharacters(name){
         const firstLetter = name.charAt(0)
         const remainingLetters = name.slice(1)
         const capitalizedName = firstLetter.toUpperCase() + remainingLetters.toLowerCase()
-        let result = store.characters.filter((character) => character.name.includes(capitalizedName))
+        let result = store.originalCharacters.filter((character) => character.name.includes(capitalizedName))
         store.characters = result
     } else {
         store.characters = []
@@ -30,12 +29,13 @@ function searchCharacters(name){
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Space+Grotesk&display=swap');
 
 div {
-    width: 35vw;
+    width: 20vw;
     height: 5vh;
     background-color: black;
-    margin-right: 15%;
+    margin-right: 30%;
     display: flex;
     justify-content: space-between;
+    border-radius: 10px;
 }
 
 input {

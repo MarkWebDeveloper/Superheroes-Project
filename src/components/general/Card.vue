@@ -1,12 +1,14 @@
 <script setup>
 import { useFavouriteCharactersStore } from '../../stores/FavouriteCharactersStore';
 import { useApiCharactersStore } from '../../stores/ApiCharactersStore';
+import { useAuthStore } from '../../stores/user';
 const props = defineProps({
   character: Object
 })
 
 const store = useApiCharactersStore()
 const storeFav = useFavouriteCharactersStore()
+const storeUsers = useAuthStore()
 </script>
 
 <template>
@@ -14,7 +16,7 @@ const storeFav = useFavouriteCharactersStore()
 
     <div class="card-photo-container">
       <img :src="character.image" class="card-img" alt="...">
-      <button class="add-character" @click="storeFav.addCharacter(character)">
+      <button class="add-character" @click="storeUsers.checkIfLoggedIn(), storeFav.addCharacter(character)">
         <img src="/images/icons/add.webp" alt="add button image">
       </button>
     </div>

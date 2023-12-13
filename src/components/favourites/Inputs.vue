@@ -1,5 +1,4 @@
 <script setup>
-import { ref } from 'vue'
 import { useNewCharacterStore } from '../../stores/NewCharacterStore';
 
 const newCharStore = useNewCharacterStore()

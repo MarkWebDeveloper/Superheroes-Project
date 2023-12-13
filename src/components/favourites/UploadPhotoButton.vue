@@ -3,16 +3,11 @@ import { useNewCharacterStore } from '../../stores/NewCharacterStore';
 
 const newCharStore = useNewCharacterStore()
 
-// let image = null
-
 function doSomething(e) { 
   let imageObject = e.target.files[0]
   let imageUrl = URL.createObjectURL(imageObject)
   newCharStore.characterImage = imageUrl
 }
-
-// imgData = createBase64Image(img);
-// localStorage.setItem("imgData", imgData);
 
 </script>
 

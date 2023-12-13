@@ -1,22 +1,7 @@
 <script setup>
 
-import { ref } from "vue";
 import { useAuthStore } from "../stores/user";
 const store = useAuthStore();
-
-
-const isLoggedIn = ref(false)
-
-function login(){
-    // let introducedUser = store.users.filter((user) => user.username == email.value && user.password == password.value)
-    // store.users.
-
-    for (let index = 0; index < store.users.length; index++) {
-        if (store.users[index].isAuthenticated == true)  {
-            isLoggedIn = true
-        }
-    }
-}
 
 </script>
     
@@ -57,7 +42,7 @@ function login(){
         display: flex;
         justify-content: space-between;
         flex-direction: row;
-        align-content: center;
+        align-items: center;
 
         font-family: 'Space Grotesk', serif;
         color: white;
