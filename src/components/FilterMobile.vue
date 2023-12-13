@@ -86,15 +86,31 @@ const toggleDropdown = () => {
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 
   z-index: 99;
-  top: -199%;
+  top: -355%;
   width: 90%;
-}
 
-.dropdown-list ul {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  border: 1px solid black;
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  div input {
+    margin-right: 8px;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 1px solid black;
+  }
 }
 
 #dropdown-menu.clicked .dropdown-list {

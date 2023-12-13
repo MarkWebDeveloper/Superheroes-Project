@@ -33,7 +33,7 @@ const toggleDropdown = () => {
 
       <ul class="dropdown-list" v-show="isDropdownOpen">
 
-          <div id="item-1">
+      <div id="item-1">
       <input type="checkbox" id="item-1" name="Human" value="Human" @click="filterCharactersByRace" />
       <label> <a href="#"> HUMAN </a> </label>
       </div>
@@ -69,8 +69,6 @@ const toggleDropdown = () => {
   color: white;
   width: 10%;
 
-  margin-left: 75%;
-
   padding: 10px;
   font-family: 'Space Grotesk', serif;
   font-size: 1.2rem;
@@ -86,17 +84,34 @@ const toggleDropdown = () => {
   margin: 0;
   padding: 0;
   background-color: #f9f9f9;
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 
   z-index: 99;
   width: 90%;
-}
 
-.dropdown-list ul {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  border: 1px solid black;
+  a {
+    text-decoration: none;
+    color: black;
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  div input {
+    margin-right: 8px;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 1px solid black;
+  }
+
 }
 
 #dropdown-menu.clicked .dropdown-list {
@@ -104,9 +119,8 @@ const toggleDropdown = () => {
 }
 
 @media only screen and (max-width: 768px) {
-     #dropdown-menu {
-        display: none;
-    }
+  #dropdown-menu {
+    display: none;
+  }
 }
-
 </style>
