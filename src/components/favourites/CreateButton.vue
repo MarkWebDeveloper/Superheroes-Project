@@ -1,14 +1,17 @@
 <script setup>
+import { useFavouriteCharactersStore } from '../../stores/FavouriteCharactersStore';
 import { useNewCharacterStore } from '../../stores/NewCharacterStore';
 
-const newCharStore = useNewCharacterStore
-    function create() {
-        console.log(newCharStore.characterAlignment)
-    }
+let store = useNewCharacterStore()
+let storeFav = useFavouriteCharactersStore()
+
+function pushNewToFavourites() {
+    storeFav.favouriteCharacters.push(store.newCharacter)
+}
 </script>
 
 <template>
-    <button type="button" @click="create">CREATE</button>
+    <button type="button" @click="store.createNewCharacter(), pushNewToFavourites()">CREATE</button>
 </template>
 
 <style lang="scss" scoped>

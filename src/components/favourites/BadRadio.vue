@@ -1,7 +1,7 @@
 <script setup>
 import { useNewCharacterStore } from '../../stores/NewCharacterStore';
 
-const newCharStore = useNewCharacterStore
+const newCharStore = useNewCharacterStore()
 </script>
 
 <template>

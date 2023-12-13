@@ -6,11 +6,9 @@ const newCharStore = useNewCharacterStore()
 // let image = null
 
 function doSomething(e) { 
-  let image = e.target.files[0]
-  let reader = new FileReader(); 
-  reader.readAsDataURL(image);
-  newCharStore.characterImage = reader
-  console.log(newCharStore.characterImage)
+  let imageObject = e.target.files[0]
+  let imageUrl = URL.createObjectURL(imageObject)
+  newCharStore.characterImage = imageUrl
 }
 
 // imgData = createBase64Image(img);
