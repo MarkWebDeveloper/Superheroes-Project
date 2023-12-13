@@ -40,7 +40,7 @@
         .rrss {
             display: flex;
             justify-content:flex-end;
-            margin-right: 5px;
+            margin-right: 3%;
 
             a {
                 width: 7%;
@@ -54,9 +54,9 @@
 
         p {
             color: white;
-            font-size: 13px;
-            margin-left: 10px;
-            font-family:'Press Start 2P', sans-serif;
+            font-size: 18px;
+            margin-left: 3%;
+            font-family:'Space Grotesk', serif;;
         }
     }
 }
