@@ -10,9 +10,9 @@
 
         <div class="rrss">
 
-            <img src="/images/icons/instagram.png" alt="">
-            <img src="/images/icons/twitter.png" alt="">
-            <img src="/images/icons/facebook.png" alt="">
+            <img src="/images/icons/instagram-white.png" alt="">
+            <img src="/images/icons/twitterx-white.png" alt="">
+            <img src="/images/icons/facebook-white.png" alt="">
 
         </div>
     </footer>
