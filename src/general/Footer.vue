@@ -10,9 +10,9 @@
 
         <div class="rrss">
 
-            <a href="https://www.instagram.com/" target="_blank"><img src="/images/icons/instagram-white.png" alt=""></a>
-            <a href="https://twitter.com/?lang=es" target="_blank"><img src="/images/icons/twitterx-white.png" alt=""></a>
-            <a href="https://www.facebook.com/?locale=es_ES" target="_blank"><img src="/images/icons/facebook-white.png" alt=""></a>
+            <a href="https://www.instagram.com/" target="_blank"><img src="/images/icons/instagram-white.png" alt="Instagram"></a>
+            <a href="https://twitter.com/?lang=es" target="_blank"><img src="/images/icons/twitterx-white.png" alt="Twitter"></a>
+            <a href="https://www.facebook.com/?locale=es_ES" target="_blank"><img src="/images/icons/facebook-white.png" alt="Facebook"></a>
 
         </div>
     </footer>
@@ -34,7 +34,7 @@
         background-color: black;
         height: 5vh;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
 
         .rrss {
@@ -54,9 +54,9 @@
 
         p {
             color: white;
-            font-size: 20px;
+            font-size: 13px;
             margin-left: 10px;
-            font-family: 'Cormorant Garamond', serif;
+            font-family:'Press Start 2P', sans-serif;
         }
     }
 }
