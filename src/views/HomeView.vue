@@ -8,10 +8,6 @@ import FilterDesktop from '../components/FilterDesktop.vue';
 
 const store = useApiCharactersStore()
 
-// const gettingOnlyTen = async () => { await store.showOnlyTen() }
-// gettingOnlyTen()
-// const tenChars = store.characters.slice(0, 10)
-
 </script>
 
 <template>

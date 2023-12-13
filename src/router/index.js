@@ -29,11 +29,6 @@ const router = createRouter({
 
 })
 
-
-/*beforeEach nos inyecta tres parámetros en la función de callback: to: Es el objeto router con la 
-información de la ruta a la que voy. from: Es el objeto router con la información
- de la ruta de la que vengo. next: Es la función que me permite reanudar la navegación. */
-
 router.beforeEach( (to, from) => {
 
   const store = useAuthStore()

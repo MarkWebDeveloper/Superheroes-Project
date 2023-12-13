@@ -1,9 +1,7 @@
 <script setup>
-import { useFavouriteCharactersStore } from '../../stores/FavouriteCharactersStore';
 import CloseButton from './CloseButton.vue';
 import HeroForm from './HeroForm.vue';
 
-const storeFav = useFavouriteCharactersStore()
 </script>
 
 <template>
