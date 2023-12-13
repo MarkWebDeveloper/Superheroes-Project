@@ -10,9 +10,9 @@
 
         <div class="rrss">
 
-            <img src="/images/icons/instagram-white.png" alt="">
-            <img src="/images/icons/twitterx-white.png" alt="">
-            <img src="/images/icons/facebook-white.png" alt="">
+            <a href="https://www.instagram.com/" target="_blank"><img src="/images/icons/instagram-white.png" alt=""></a>
+            <a href="https://twitter.com/?lang=es" target="_blank"><img src="/images/icons/twitterx-white.png" alt=""></a>
+            <a href="https://www.facebook.com/?locale=es_ES" target="_blank"><img src="/images/icons/facebook-white.png" alt=""></a>
 
         </div>
     </footer>
@@ -34,19 +34,23 @@
         background-color: black;
         height: 5vh;
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
 
         .rrss {
             display: flex;
-            justify-content: flex-end;
+            justify-content:flex-end;
             margin-right: 5px;
 
-            img {
-                width: 3%;
+            a {
+                width: 7%;
                 padding: 9px;
+                transition: 300ms;
             }
         }
+            a:hover{
+                transform: scale(1.1);
+            }
 
         p {
             color: white;
