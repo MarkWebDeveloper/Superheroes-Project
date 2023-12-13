@@ -14,7 +14,7 @@ export const useNewCharacterStore = defineStore('newCharacter', () => {
     race: '',
     intelligence: '',
     power: 0,
-    alignment: 0,
+    alignment: '',
     image: '',
     isBeingEdited: false
   })

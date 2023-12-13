@@ -2,12 +2,12 @@
 import { useNewCharacterStore } from '../../stores/NewCharacterStore';
 
 const newCharStore = useNewCharacterStore()
-newCharStore.characterAlignment = 'Good'
+newCharStore.characterAlignment = 'good'
 </script>
 
 <template>
     <label class="container" for="good-radio">GOOD
-        <input type="radio" id="good-radio" value="Good" name="good-or-bad" checked
+        <input type="radio" id="good-radio" value="good" name="good-or-bad" checked
             v-model="newCharStore.characterAlignment">
     </label>
 </template>

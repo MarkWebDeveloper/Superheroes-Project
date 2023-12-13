@@ -6,7 +6,7 @@ const newCharStore = useNewCharacterStore()
 
 <template>
     <label class="container" for="bad-radio">BAD
-        <input type="radio" id="bad-radio" value="Bad" name="good-or-bad" v-model="newCharStore.characterAlignment">
+        <input type="radio" id="bad-radio" value="bad" name="good-or-bad" v-model="newCharStore.characterAlignment">
     </label>
 </template>
 
